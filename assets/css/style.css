@@ -1,0 +1,146 @@
+body {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+/* hr {
+    margin-bottom: 100px;
+} */
+
+table {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+td {
+    vertical-align: top;
+}
+
+td.rating {
+    vertical-align: middle;
+}
+
+td.release-year {
+    vertical-align: middle;
+}
+
+tbody {
+    height: 300px;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.pure-u-1-5 {
+    float: right;
+}
+
+.pure-button {
+    margin-bottom: 8px;
+    width: 155px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: rgb(17, 0, 112);
+    float: right;
+}
+
+button:hover {
+    background: rgb(18, 83, 223);
+}
+
+button:active {
+    background: rgb(14, 64, 170);
+}
+
+span {
+    font-size: 12.5px;
+    margin-top: 2px;
+}
+
+#food-logo {
+    max-height: 40px;
+    max-width: 40px;
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    margin-top: 1px;
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+#movie-logo {
+    max-height: 40px;
+    max-width: 40px;
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    margin-top: 1px;
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+#moviePoster {
+    max-height: 380px;
+    max-width: 140px;
+    margin-bottom: -4px;
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* IE 9 */
+    -ms-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: black;
+}
+
+
+#moviePoster:hover {
+    -webkit-transform:scale(2); /* Safari and Chrome */
+    -moz-transform:scale(2); /* Firefox */
+    -ms-transform:scale(2); /* IE 9 */
+    -o-transform:scale(2); /* Opera */
+     transform:scale(2);
+}
+
+#poster-head,
+#trailer-head,
+#synopsis-head {
+    text-align: left;
+}
+
+iframe {
+    height: 210px;
+    width: 400px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: black;
+}
+
+td.synopsis {
+    display: block;
+    background: rgb(189, 189, 189);
+    margin-top: 8px;
+    width: 125px;
+    height: 210px;
+    overflow: auto;
+    padding: 0;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+th {
+    background: rgb(10, 0, 70);
+    color: white;
+}
+
+tr {
+    font-size: 14px;
+    background: rgb(231, 231, 231);
+}
