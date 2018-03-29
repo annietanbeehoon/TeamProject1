@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Giphy API</title>
+</head>
+
+
+<body>
+
+    <img id='myGif' height="200px;" width="200px;">
+    <div id="geo"></div>
+
+    <p> This is search on cinemas</p>
+    <div id="movie1"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        var arrCinema = [];
+
+
+        function oCinema(cinema_id, cinema_name, cinema_name, cimema_address, cimena_lon, cimema_lat) {
+            this.cinema_id = cinema_id;
+            cinema_name = cinema_name;
+            cimema_address = cimema_address;
+            cimena_lon = cimena_lon;
+            cimema_lat = cimema_lat;
+        };
+
+        arrCinema.push(new oCinema('', '', '', '', '', ''));
+
+        //geolocation - show how easy//
+        // function getLocation() {
+        //     if (navigator.geolocation) {
+        //         navigator.geolocation.getCurrentPosition(showPosition);
+        //     } else {
+        //         $('#geo').text("Geolocation is not supported by this browser.");
+        //     }
+        // }
+        // function showPosition(position) {
+        //     $('#geo').html("Latitude: " + position.coords.latitude +
+        //         "<br>Longitude: " + position.coords.longitude);
+        // }
+
+        // getLocation();
+
+
+       // var myKey = 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK';
+        //url: "https://api.internationalshowtimes.com/v4/movies/",
+        //<!-- // Example queryURL for Giphy API -->
+       // var queryURL = "https://api.internationalshowtimes.com/v4/cinemas/?apikey=" + myKey;
+        
+        async function initialRequest(){
+
+            console.log("Initial Ajax Request");
+
+            var initialResults = await jQuery.ajax({
+                url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
+                type: "GET",
+                data: {
+                    "countries": "US",
+                    "movie_id": "27235",
+                    "distance": 10,
+                    "near_to": "40.535246699999995,-74.52158229999999",
+                    "limit": 30
+                },
+                headers: {
+                    "X-API-Key": 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK',
+                },
+            });
+
+            //console.log("HTTP Request Succeeded: " + jqXHR.status);
+            console.log(initialResults);
+            var xxx;
+
+            var sho = initialResults.showtimes;
+
+            for (let i = 0; i < sho.length; i++) {
+                console.log(xxx);
+                var d1 = $('<div>');
+                var xxx = '<p> cimema id: ' + sho[i].cinema_id;
+
+                var index = arrCinema.findIndex(oCinema => oCinema.cinema_id === sho[i].cinema_id);
+                if (index < 0) {
+                    var retData = await getCinemaInfo(sho[i]);
+                    console.log(retData);
+                    var obj = new oCinema(sho[i].cinema_id,
+                        '', '', '', '', '');
+                    arrCinema.push(obj);
+                } else {
+                    // worry about this later
+                }
+
+                xxx += '<br> id: ' + sho[i].id;
+                xxx += '<br> movie id: ' + sho[i].movie_id;
+                xxx += '<br> start at: ' + sho[i].start_at;
+                d1.html(xxx);
+                $('#movie1').append(d1);
+                //var retCinemainfo = await getCinemaInfo(sho[i]);
+            }
+        }
+        
+        initialRequest();
+        // jQuery.ajax({
+        //     url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
+        //     type: "GET",
+        //     data: {
+        //         "countries": "US",
+        //         "movie_id": "27235",
+        //         "distance": 10,
+        //         "near_to": "40.535246699999995,-74.52158229999999",
+        //         "limit": 30
+        //     },
+        //     headers: {
+        //         "X-API-Key": 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK',
+        //     },
+        // })
+        //     .done(async function (data, textStatus, jqXHR) {
+        //         console.log("HTTP Request Succeeded: " + jqXHR.status);
+        //         console.log(data);
+        //         var xxx;
+
+        //         var sho = data.showtimes;
+
+        //         for (let i = 0; i < sho.length; i++) {
+        //             console.log(xxx);
+        //             var d1 = $('<div>');
+        //             var xxx = '<p> cimema id: ' + sho[i].cinema_id;
+
+        //             var index = arrCinema.findIndex(oCinema => oCinema.cinema_id === sho[i].cinema_id);
+        //             if (index < 0) {
+        //                 var retData = await getCinemaInfo(sho[i]);
+        //                 console.log(retData);
+        //                 var obj = new oCinema(sho[i].cinema_id,
+        //                     '', '', '', '', '');
+        //                 arrCinema.push(obj);
+        //             } else {
+        //                 // worry about this later
+        //             }
+
+        //             xxx += '<br> id: ' + sho[i].id;
+        //             xxx += '<br> movie id: ' + sho[i].movie_id;
+        //             xxx += '<br> start at: ' + sho[i].start_at;
+        //             d1.html(xxx);
+        //             $('#movie1').append(d1);
+        //             //var retCinemainfo = await getCinemaInfo(sho[i]);
+        //         }
+
+        //     })
+        //     .fail(function (jqXHR, textStatus, errorThrown) {
+        //         console.log("HTTP Request Failed");
+        //     })
+        //     .always(function () {
+        //         /* ... */
+        //     });
+
+
+        //second call
+        async function getCinemaInfo(cimdata) {
+
+            console.log(cimdata.cinema_id, 'in getCinemaInfo( cimdata)');
+            var result = await jQuery.ajax({
+                url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/cinemas/" + cimdata.cinema_id,
+                type: "GET",
+                data: {
+                    "countries": "US",
+                    "movie_id": "27235",
+                    "distance": 25,
+                    "near_to": "40.535246699999995,-74.52158229999999",
+                    "location": "40.535246699999995,-74.52158229999999",
+                    "limit": 5
+                },
+                headers: {
+                    "X-API-Key": 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK',
+                },
+            });
+
+            return result;
+            // .done(function (data, textStatus, jqXHR) {
+            //     console.log("HTTP Request Succeeded: " + jqXHR.status);
+            //     console.log('in second ajaz');
+            //     console.log(data);
+
+            //     // var sho = data.showtimes;
+            //     var obj = new oCinema(cimdata.cinema_id, '', '', '', '', '');
+
+
+            // })
+            // .fail(function (jqXHR, textStatus, errorThrown) {
+            //     console.log("HTTP Request Failed");
+            // })
+            // .always(function () {
+            //     /* ... */
+            // });
+
+
+        }
+
+
+                    // for (let i = 0; i < sho.length; i++) {
+                    //     console.log(xxx);
+                    //     var d1 = $('<div>');
+                    //     var xxx = '<p> cimema id: ' + sho[i].cinema_id;
+                    //     xxx += '<br> id: ' + sho[i].id;
+                    //     xxx += '<br> movie id: ' + sho[i].movie_id;
+                    //     xxx += '<br> start at: ' + sho[i].start_at;
+                    //     d1.html(xxx);
+                    //     $('#movie1').append(d1);
+                    //     // var retCinemainfo = await getCinemaInfo(sho[i]);
+                    // }
+
+
+    </script>
+
+</body>
+
+</html>
