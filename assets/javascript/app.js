@@ -13,25 +13,39 @@ $(document).ready(function () {
     var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=88887032dc1d0d80dd7ccbd783133865&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_cast&page=1append_to_response=overview,release_date,&query=";
     //https://api.themoviedb.org/3/movie/157336?api_key={api_key}&append_to_response=videos,images
     // grab text the user typed into the search input, add as parameter to url
-    //
-    //var movieInput = $("#input[type=text]").val();
-    //console.log(movieInput);
-    //movieInput = movieInput.replace(/ /g, '+');
-    // var movie = $("#movie-input").val().trim();
-    // var actor = $("#actor").val().trim();
-    // var genre = $("#genre").val().trim();
-    // var year = $("#year").val().trim();
-    // var movie = movie.replace(/ /g, '+');
-    // var actor = actor.replace(/ /g, '+');
-    // var genre = genre.replace(/ /g, '+');
-    // var year = year.replace(/ /g, '+');
+   var movieSearch = [];
+   movieSearch[0] = $("#movie-input").val().trim().replace(/ /g, '+');
+   movieSearch[1] = $("#actor-input").val().trim().replace(/ /g, '+');
+   movieSearch[2] = $("#genre-input").val().trim().replace(/ /g, '+');
+   movieSearch[3] = $("#year-input").val().trim().replace(/ /g, '+');
+    
+   console.log (movieSearch);
+   queryURL += movieSearch;
+      
+    //   movieInput = movieInput.replace(/ /g, '+');
+    //   console.log(movieInput);
+    //   queryURL += movieInput;
 
-    var movie = $("#movie-input").val().trim();
-    var movie = movie.replace(/ /g, '+');
-    console.log(movie);
+    // } else if (userInputActor) {
+     
+    //   actorInput = actorInput.replace(/ /g, '+');
+    //   console.log(actorInput);
+    //   queryURL += actorInput;
 
-    console.log(movie);
-    queryURL += movie;
+    // }
+
+    // } else if (userInputGenre) {
+    //   var genreInput = $("#genre-input").val().trim();
+    //   genreInput = genreInput.replace(/ /g, '+');
+    //   console.log(genreInput);
+    //   queryURL += genreInput;
+
+    // } else (userInputYear) {
+    //   var yearInput = $("#year-input").val().trim();
+    //   yearInput = yearInput.replace(/ /g, '+');
+    //   console.log(yearInput);
+    //   queryURL += yearInput;
+    // }
 
     // Logging the URL so we have access to it for troubleshooting
     console.log("---------------\nURL: " + queryURL + "\n---------------");
@@ -50,6 +64,10 @@ $(document).ready(function () {
       // Creating a div to hold the movie
       var movieDiv = $("#movies-view");
 
+      // var movieName = response.results[0].title;
+      // var pMovieTitle = $("<p>").text("Movie Name: " + title);
+      // movieDiv.append(pMovieTitle);
+      
       // Storing the imagesrelease date data
       var releaseDate = response.results[0].release_date;
 
@@ -69,22 +87,6 @@ $(document).ready(function () {
       movieDiv.append(pTwo);
       // Retrieving the URL for the image
 
-      // $('#movie').focus(function() {
-      //     var full = 
-      //     $("#poster").has("img").length ? true :
-      //     false;
-      //     if(full === false) {
-      //       $("#poster").empty();
-      //     }
-      // });
-
-      //$.getJSON("https://image.tmdb.org/t/p/")
-
-      //var src1 = '<%=Url.Content(Server.MapPath("~/AppData/1.jpg"))%>';
-      //$("#imgLocation").attr("src", src1);
-
-      // https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg
-
       // var imgURL = response.results[0].poster_path;
       console.log('poster path: ', response.results[0].poster_path);
       var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[0].poster_path;
@@ -95,8 +97,8 @@ $(document).ready(function () {
       // Appending the image
       movieDiv.append(image);
 
-      // Putting the entire movie above the previous movies
-      ////////////  $("#movies-view").prepend(movieDiv);
+    
     });
   })
 });
+
