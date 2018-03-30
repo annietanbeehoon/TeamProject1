@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Project 1</title>
+   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+</head>
+<body>
+       <div class="jumbotron">
+           <div id="apptitle">
+               <h1 class="display-4">Dinner and a Movie!</h1>
+               <p class="lead">The app that lets you know what movie to take your date to and where to take them afterwards!</p>
+           </div>
+       </div>
+   
+       <div class="containder">
+           <div class="row">
+               <div class="col">
+                   <form class="pure-form pure-form-aligned">
+                   <fieldset>
+                   <div class="pure-control-group">
+                       <label for="movie-input">Movie</label>
+                       <input id="movie-input" type="text" name="Movie">
+                   </div>
+           
+                   <div class="pure-control-group">
+                       <label for="actor">Actor</label>
+                       <input id="actor" type="text" name="Actor">
+                   </div>
+           
+                   <div class="pure-control-group">
+                       <label for="genre">Genre</label>
+                       <input id="movie-input" type="text" name="Genre">
+                   </div>
+           
+                   <div class="pure-control-group">
+                       <label for="year">Year</label>
+                       <input id="movie-input" type="text" name="Year">
+                   </div>
+
+                   <div class="pure-controls">
+                   <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                   </div>
+                   </fieldset>
+                   </form>
+                </div>
+               <div class="col">
+                   <div id="movies-view"></div>
+               </div>
+               <div class="col">
+                   <div id="trailers-view"></div>
+               </div>
+           </div>
+       </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../javascript/app.js"></script>
+
+   
+
+
+</body>
+</html>
