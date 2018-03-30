@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Giphy API</title>
+    <title>ajax on iShowtimes</title>
 </head>
 
 
@@ -35,28 +35,8 @@
 
         arrCinema.push(new oCinema('', '', '', '', '', ''));
 
-        //geolocation - show how easy//
-        // function getLocation() {
-        //     if (navigator.geolocation) {
-        //         navigator.geolocation.getCurrentPosition(showPosition);
-        //     } else {
-        //         $('#geo').text("Geolocation is not supported by this browser.");
-        //     }
-        // }
-        // function showPosition(position) {
-        //     $('#geo').html("Latitude: " + position.coords.latitude +
-        //         "<br>Longitude: " + position.coords.longitude);
-        // }
 
-        // getLocation();
-
-
-       // var myKey = 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK';
-        //url: "https://api.internationalshowtimes.com/v4/movies/",
-        //<!-- // Example queryURL for Giphy API -->
-       // var queryURL = "https://api.internationalshowtimes.com/v4/cinemas/?apikey=" + myKey;
-        
-        async function initialRequest(){
+        async function initialRequest() {
 
             console.log("Initial Ajax Request");
 
@@ -68,6 +48,7 @@
                     "movie_id": "27235",
                     "distance": 10,
                     "near_to": "40.535246699999995,-74.52158229999999",
+                    "location": "40.535246699999995,-74.52158229999999",
                     "limit": 30
                 },
                 headers: {
@@ -77,12 +58,11 @@
 
             //console.log("HTTP Request Succeeded: " + jqXHR.status);
             console.log(initialResults);
-            var xxx;
 
             var sho = initialResults.showtimes;
 
             for (let i = 0; i < sho.length; i++) {
-                console.log(xxx);
+
                 var d1 = $('<div>');
                 var xxx = '<p> cimema id: ' + sho[i].cinema_id;
 
@@ -102,63 +82,11 @@
                 xxx += '<br> start at: ' + sho[i].start_at;
                 d1.html(xxx);
                 $('#movie1').append(d1);
-                //var retCinemainfo = await getCinemaInfo(sho[i]);
+
             }
         }
-        
+
         initialRequest();
-        // jQuery.ajax({
-        //     url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
-        //     type: "GET",
-        //     data: {
-        //         "countries": "US",
-        //         "movie_id": "27235",
-        //         "distance": 10,
-        //         "near_to": "40.535246699999995,-74.52158229999999",
-        //         "limit": 30
-        //     },
-        //     headers: {
-        //         "X-API-Key": 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK',
-        //     },
-        // })
-        //     .done(async function (data, textStatus, jqXHR) {
-        //         console.log("HTTP Request Succeeded: " + jqXHR.status);
-        //         console.log(data);
-        //         var xxx;
-
-        //         var sho = data.showtimes;
-
-        //         for (let i = 0; i < sho.length; i++) {
-        //             console.log(xxx);
-        //             var d1 = $('<div>');
-        //             var xxx = '<p> cimema id: ' + sho[i].cinema_id;
-
-        //             var index = arrCinema.findIndex(oCinema => oCinema.cinema_id === sho[i].cinema_id);
-        //             if (index < 0) {
-        //                 var retData = await getCinemaInfo(sho[i]);
-        //                 console.log(retData);
-        //                 var obj = new oCinema(sho[i].cinema_id,
-        //                     '', '', '', '', '');
-        //                 arrCinema.push(obj);
-        //             } else {
-        //                 // worry about this later
-        //             }
-
-        //             xxx += '<br> id: ' + sho[i].id;
-        //             xxx += '<br> movie id: ' + sho[i].movie_id;
-        //             xxx += '<br> start at: ' + sho[i].start_at;
-        //             d1.html(xxx);
-        //             $('#movie1').append(d1);
-        //             //var retCinemainfo = await getCinemaInfo(sho[i]);
-        //         }
-
-        //     })
-        //     .fail(function (jqXHR, textStatus, errorThrown) {
-        //         console.log("HTTP Request Failed");
-        //     })
-        //     .always(function () {
-        //         /* ... */
-        //     });
 
 
         //second call
@@ -170,7 +98,6 @@
                 type: "GET",
                 data: {
                     "countries": "US",
-                    "movie_id": "27235",
                     "distance": 25,
                     "near_to": "40.535246699999995,-74.52158229999999",
                     "location": "40.535246699999995,-74.52158229999999",
@@ -182,39 +109,7 @@
             });
 
             return result;
-            // .done(function (data, textStatus, jqXHR) {
-            //     console.log("HTTP Request Succeeded: " + jqXHR.status);
-            //     console.log('in second ajaz');
-            //     console.log(data);
-
-            //     // var sho = data.showtimes;
-            //     var obj = new oCinema(cimdata.cinema_id, '', '', '', '', '');
-
-
-            // })
-            // .fail(function (jqXHR, textStatus, errorThrown) {
-            //     console.log("HTTP Request Failed");
-            // })
-            // .always(function () {
-            //     /* ... */
-            // });
-
-
         }
-
-
-                    // for (let i = 0; i < sho.length; i++) {
-                    //     console.log(xxx);
-                    //     var d1 = $('<div>');
-                    //     var xxx = '<p> cimema id: ' + sho[i].cinema_id;
-                    //     xxx += '<br> id: ' + sho[i].id;
-                    //     xxx += '<br> movie id: ' + sho[i].movie_id;
-                    //     xxx += '<br> start at: ' + sho[i].start_at;
-                    //     d1.html(xxx);
-                    //     $('#movie1').append(d1);
-                    //     // var retCinemainfo = await getCinemaInfo(sho[i]);
-                    // }
-
 
     </script>
 
