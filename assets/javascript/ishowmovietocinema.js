@@ -6,7 +6,7 @@
 // "all_fields": true,  "fields": "original_title,synopsis",     "tmdb_id": movieId,
 
 function Ajax_withMovieID(movieId) {
-
+    //need to make call from annie tmdb to get ishowtime movieid
     jQuery.ajax({
         url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
         type: "GET",
@@ -70,7 +70,7 @@ function get_Showtimes(iShowtimes_id) {
             "countries": "US",
             "movie_id": iShowtimes_id,
             "time_to": myTomorrow,
-            "limit": 2,
+            "limit": 7,
             "append": "cinema",
             //"movie_fields:":"scene_images.flat",
             "fields": "cinema_id,start_at,cinema_movie_title,booking_link,title,slug,poster_image_thumbnail",
@@ -82,12 +82,17 @@ function get_Showtimes(iShowtimes_id) {
     })
         .done(function (data, textStatus, jqXHR) {
             console.log("HTTP Request Succeeded: " + jqXHR.status);
-            console.log(data);
+            console.log(data, ' -- from showtime call');
             var ds = data.showtimes;
             for (let i = 0; i < ds.length; i++) {
                 const element = ds[i];
+                arrShowtimes.push(element);
                 writeShowtimes(element);
-                get_cinemas(element.cinema_id);
+
+                if (haveCinemaInfo(element.cinema_id) < 0) {
+                    get_cinemas(element.cinema_id);
+                }
+
             }
 
         })
@@ -103,7 +108,17 @@ function get_Showtimes(iShowtimes_id) {
 }
 
 
+function haveCinemaInfo(cinemaId) {
+    return index = arrCinema.findIndex((cinema) => id === cinemaId);
+
+}
 async function get_cinemas(cinema_id) {
+
+    if (haveCinemaInfo(cinema_id) >= 0) {
+        console.log('get cinema- found info,no ajax', haveCinemainfo(cinema_id));
+        return;
+    }
+
     console.log('get_cinemas(', cinema_id);
     jQuery.ajax({
         url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/cinemas/" + cinema_id,
@@ -119,7 +134,8 @@ async function get_cinemas(cinema_id) {
         .done(function (data, textStatus, jqXHR) {
             console.log("HTTP Request Succeeded: " + jqXHR.status);
             console.log(data);
-            // writeHTML_movies(data.movies);
+            arrCinema.push(data);
+
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log("HTTP Request Failed");
@@ -140,4 +156,5 @@ function writeShowtimes(element) {
     xx += ' Cinema Id: ' + element.cinema_id + ' , cinema_movie_title: ' + element.cinema_movie_title + '<br><br>';
     p.html(xx);
     $('#showtime').append(p);
+
 }
