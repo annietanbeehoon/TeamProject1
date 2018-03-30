@@ -3,7 +3,16 @@
 
 //global variables
 
+var ApiKey_iShowtimes = 'ax9iovcR67XrX8hGK1uRQpgGNymgCUaK';
 
+
+// test longitude and lat -- using my house
+var Latitude =	40.5953 ;
+var Longitude =	-74.6173 ;
+var myTomorrow;
+
+var latLon = Latitude + ","+ Longitude;
+   
 
 
 //document ready
@@ -16,16 +25,9 @@ $(document).ready(function () {
         Ajax_withMovieID($(this).val());
     });
 
+    //use momnetjs to crete time string for tomorrow date
+    // to limit showtime-- if not will bring back 7 days worth of movies
 
-
-    // Ajax_withMovieID("29368");
-    // Ajax_withMovieID("29483");
-    // Ajax_withMovieID("30227");
-    // Ajax_withMovieID("41921");
-    // Ajax_withMovieID("12226");
-
-
-
-
-
+     myTomorrow = moment().add(1, 'days').format();
+  console.log( myTomorrow);
 });
