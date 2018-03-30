@@ -7,7 +7,6 @@
 
 function Ajax_withMovieID(movieId) {
 
-
     jQuery.ajax({
         url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
         type: "GET",
@@ -16,7 +15,7 @@ function Ajax_withMovieID(movieId) {
             "tmdb_id": movieId,
             "limit": 10,
             "fields": "id,slug,title,poster_image_thumbnail,tmdb_id,original_title,synopsis,website",
-            // "all_fields": true,
+            "all_fields": true,
         },
         headers: {
             "X-API-Key": ApiKey_iShowtimes,
@@ -45,30 +44,36 @@ function writeHTML_movies(movieData) {
     for (let i = 0; i < movieData.length; i++) {
         const element = movieData[i];
         console.log(i, element);
+        var x = 'tmdb_id: ' + element.tmdb_id + ', id: ' + element.id;
+        x += ', original_title: ' + element.original_title + ' <br> Synopsis ' + element.synopsis;
+        x += ', slug: ' + element.slug + ', poster_image_thumbnail: ' + element.poster_image_thumbnail;
+        x += ' , title: ' + element.title + '<br> website: ' + element.website;
         var img = $('<img>');
         img.attr('src', element.poster_image_thumbnail);
+        var p = $("<p>");
+        p.html(x);
         get_Showtimes(element.id);
-        divMovies.append(img);
+        divMovies.append(img).append(p);
 
     }
 
 }
 
-function get_Showtimes(id) {
+function get_Showtimes(iShowtimes_id) {
 
-    console.log('get_Showtimes(id)', id);
+    console.log('get_Showtimes(id)', iShowtimes_id);
 
     jQuery.ajax({
-        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/", //+ movieId,
+        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
         type: "GET",
         data: {
             "countries": "US",
-            "movie_id": id,
+            "movie_id": iShowtimes_id,
             "time_to": myTomorrow,
-            "limit": 3,
-            "fields": "cinema_id,start_at,cinema_movie_title,booking_link",
-            // "fields": "id,cinema_id,start_at,cinema_movie_title,booking_link",
-            //"all_fields":true,
+            "limit": 2,
+            "append": "cinema",
+            //"movie_fields:":"scene_images.flat",
+            "fields": "cinema_id,start_at,cinema_movie_title,booking_link,title,slug,poster_image_thumbnail",
             "location": latLon,
         },
         headers: {
@@ -81,9 +86,10 @@ function get_Showtimes(id) {
             var ds = data.showtimes;
             for (let i = 0; i < ds.length; i++) {
                 const element = ds[i];
-                get_cinemas(element.cinema_id);     
+                writeShowtimes(element);
+                get_cinemas(element.cinema_id);
             }
-                   
+
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log("HTTP Request Failed");
@@ -97,14 +103,14 @@ function get_Showtimes(id) {
 }
 
 
-function get_cinemas(cinema_id){
-    console.log('get_cinemas(',cinema_id);
+async function get_cinemas(cinema_id) {
+    console.log('get_cinemas(', cinema_id);
     jQuery.ajax({
-        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/cinemas/" +cinema_id, 
+        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/cinemas/" + cinema_id,
         type: "GET",
         data: {
             "countries": "US",
-            "cinema_id": cinema_id,            
+            "cinema_id": cinema_id,
         },
         headers: {
             "X-API-Key": ApiKey_iShowtimes,
@@ -124,4 +130,14 @@ function get_cinemas(cinema_id){
             /* ... */
         });
 
+}
+
+
+function writeShowtimes(element) {
+    console.log("WriteShowTime", element);
+    var p = $("<p>");
+    var xx = 'Start_at: ' + element.start_at + ' , booking_link: ' + element.booking_link + '<br>';
+    xx += ' Cinema Id: ' + element.cinema_id + ' , cinema_movie_title: ' + element.cinema_movie_title + '<br><br>';
+    p.html(xx);
+    $('#showtime').append(p);
 }
