@@ -70,7 +70,7 @@ function get_Showtimes(iShowtimes_id) {
             "countries": "US",
             "movie_id": iShowtimes_id,
             "time_to": myTomorrow,
-            "limit": 7,
+            "limit": 20,
             "append": "cinema",
             //"movie_fields:":"scene_images.flat",
             "fields": "cinema_id,start_at,cinema_movie_title,booking_link,title,slug,poster_image_thumbnail",
@@ -109,15 +109,15 @@ function get_Showtimes(iShowtimes_id) {
 
 
 function haveCinemaInfo(cinemaId) {
-    return index = arrCinema.findIndex((cinema) => id === cinemaId);
+    var index;
+    index = arrCinema.findIndex( el => el[0] == cinemaId);
+    console.log(' haveCinemaInfo(cinemaId)', index);
+    return index;
 
 }
 async function get_cinemas(cinema_id) {
 
-    if (haveCinemaInfo(cinema_id) >= 0) {
-        console.log('get cinema- found info,no ajax', haveCinemainfo(cinema_id));
-        return;
-    }
+    if (haveCinemaInfo(cinema_id) >= 0) { return; }
 
     console.log('get_cinemas(', cinema_id);
     jQuery.ajax({
@@ -133,8 +133,8 @@ async function get_cinemas(cinema_id) {
     })
         .done(function (data, textStatus, jqXHR) {
             console.log("HTTP Request Succeeded: " + jqXHR.status);
-            console.log(data);
-            arrCinema.push(data);
+            console.log('got cinema', data);
+            arrCinema.push([data.cinema.id, data]);
 
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
