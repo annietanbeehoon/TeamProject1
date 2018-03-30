@@ -13,39 +13,15 @@ $(document).ready(function () {
     var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=88887032dc1d0d80dd7ccbd783133865&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_cast&page=1append_to_response=overview,release_date,&query=";
     //https://api.themoviedb.org/3/movie/157336?api_key={api_key}&append_to_response=videos,images
     // grab text the user typed into the search input, add as parameter to url
-   var movieSearch = [];
-   movieSearch[0] = $("#movie-input").val().trim().replace(/ /g, '+');
-   movieSearch[1] = $("#actor-input").val().trim().replace(/ /g, '+');
-   movieSearch[2] = $("#genre-input").val().trim().replace(/ /g, '+');
-   movieSearch[3] = $("#year-input").val().trim().replace(/ /g, '+');
-    
-   console.log (movieSearch);
-   queryURL += movieSearch;
-      
-    //   movieInput = movieInput.replace(/ /g, '+');
-    //   console.log(movieInput);
-    //   queryURL += movieInput;
+    var movieSearch = [];
+    movieSearch[0] = $("#movie-input").val().trim().replace(/ /g, '+');
+    movieSearch[1] = $("#actor-input").val().trim().replace(/ /g, '+');
+    movieSearch[2] = $("#genre-input").val().trim().replace(/ /g, '+');
+    movieSearch[3] = $("#year-input").val().trim().replace(/ /g, '+');
 
-    // } else if (userInputActor) {
-     
-    //   actorInput = actorInput.replace(/ /g, '+');
-    //   console.log(actorInput);
-    //   queryURL += actorInput;
+    console.log(movieSearch);
+    queryURL += movieSearch;
 
-    // }
-
-    // } else if (userInputGenre) {
-    //   var genreInput = $("#genre-input").val().trim();
-    //   genreInput = genreInput.replace(/ /g, '+');
-    //   console.log(genreInput);
-    //   queryURL += genreInput;
-
-    // } else (userInputYear) {
-    //   var yearInput = $("#year-input").val().trim();
-    //   yearInput = yearInput.replace(/ /g, '+');
-    //   console.log(yearInput);
-    //   queryURL += yearInput;
-    // }
 
     // Logging the URL so we have access to it for troubleshooting
     console.log("---------------\nURL: " + queryURL + "\n---------------");
@@ -64,11 +40,15 @@ $(document).ready(function () {
       // Creating a div to hold the movie
       var movieDiv = $("#movies-view");
 
-      // var movieName = response.results[0].title;
-      // var pMovieTitle = $("<p>").text("Movie Name: " + title);
-      // movieDiv.append(pMovieTitle);
-      
-      // Storing the imagesrelease date data
+      //var movieTitle = response.results[0].title;
+      //var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      //movieDiv.append(pMovieTitle);
+      console.log('title:' , response.results[0].title);
+      var title = response.results[0].title;
+      var pMovieTitle = $("<p>").text("Movie Title: "+ title);
+      movieDiv.append(pMovieTitle);
+
+      // Storing the release date data
       var releaseDate = response.results[0].release_date;
 
       // Creating an element to have the release date displayed
@@ -85,8 +65,9 @@ $(document).ready(function () {
 
       // Appending the plot
       movieDiv.append(pTwo);
-      // Retrieving the URL for the image
 
+      
+      // Retrieving the URL for the image
       // var imgURL = response.results[0].poster_path;
       console.log('poster path: ', response.results[0].poster_path);
       var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[0].poster_path;
@@ -97,7 +78,8 @@ $(document).ready(function () {
       // Appending the image
       movieDiv.append(image);
 
-    
+
+
     });
   })
 });
