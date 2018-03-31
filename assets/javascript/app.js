@@ -24,6 +24,10 @@ $(document).ready(function () {
     movieSearch[2] = $("#genre-input").val().trim().replace(/ /g, '+');
     movieSearch[3] = $("#year-input").val().trim().replace(/ /g, '+');
 
+    
+
+
+
     console.log(movieSearch);
     queryURL += movieSearch;
 
@@ -91,6 +95,12 @@ $(document).ready(function () {
 
       // Appending the image
       movieDiv.append(image);
+
+      $("#movie-input").val("");
+    $("#actor-input").val("");
+    $("#genre-input").val("");
+    $("#myear-input").val("");
+
 
 
       //=====================================results[1]
@@ -187,6 +197,12 @@ $(document).ready(function () {
       // Appending the image
       movieDiv.append(image);
 
+      $("#movie-input").val("");
+    $("#actor-input").val("");
+    $("#genre-input").val("");
+    $("#myear-input").val("");
+
+
       //==============================results[3]
 
       //get movieID for Showtime
@@ -280,6 +296,12 @@ $(document).ready(function () {
 
       // Appending the image
       movieDiv.append(image);
+
+      $("#movie-input").val("");
+    $("#actor-input").val("");
+    $("#genre-input").val("");
+    $("#myear-input").val("");
+
       //====================================End of results==================
 
       var settings = {
@@ -307,9 +329,10 @@ $(document).ready(function () {
         
 
         // var obj = {"video": {
-        //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0' allowFullScreen></iframe>"
+        //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='300' height='150' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0'></iframe>"
         // }}
-        // document.write(obj.video.value);
+        // // document.write(obj.video.value);
+        // $('#movies-view').html('[obj.value]');
 
         // var obj = {"video": {
         //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='trailerURl' frameborder='0' allowFullScreen></iframe>"
