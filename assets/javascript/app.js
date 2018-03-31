@@ -44,281 +44,304 @@ $(document).ready(function () {
         console.log(response.results[i]);
       }
 
-      //============================results[0]
-        //get movieID for Showtime
-        var movieId = JSON.parse(response.results[0].id);
-        console.log(movieId);
+      //============================results[0] - failed to make a function so
+      //============================replicated codes for each result index 0 to 4
+      //get movieID for Showtime
+      var movieId = JSON.parse(response.results[0].id);
+      console.log(movieId);
 
-        // Creating a div to hold the movie
-        var movieDiv = $("#movies-view");
+      // Creating a div to hold the movie
+      var movieDiv = $("#movies-view");
 
-        console.log('Title:', response.results[0].title);
-        var title = response.results[0].title;
-        var pMovieTitle = $("<p>").text("Movie Title: " + title);
-        movieDiv.append(pMovieTitle);
+      console.log('Title:', response.results[0].title);
+      var title = response.results[0].title;
+      var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      movieDiv.append(pMovieTitle);
 
-        console.log('Vote Average:', response.results[0].vote_average);
-        var vote = response.results[0].vote_average;
-        var pVote = $("<p>").text("Vote Average: " + vote);
-        movieDiv.append(pVote);
+      console.log('Vote Average:', response.results[0].vote_average);
+      var vote = response.results[0].vote_average;
+      var pVote = $("<p>").text("Vote Average: " + vote);
+      movieDiv.append(pVote);
 
-        // Storing the release date data
-        var releaseDate = response.results[0].release_date;
+      // Storing the release date data
+      var releaseDate = response.results[0].release_date;
 
-        // Creating an element to have the release date displayed
-        var pOne = $("<p>").text("Release date: " + releaseDate);
+      // Creating an element to have the release date displayed
+      var pOne = $("<p>").text("Release date: " + releaseDate);
 
-        // Displaying the releaseDate
-        movieDiv.append(pOne);
+      // Displaying the releaseDate
+      movieDiv.append(pOne);
 
-        // Storing the overview
-        var overview = response.results[0].overview;
+      // Storing the overview
+      var overview = response.results[0].overview;
 
-        // Creating an element to hold the overview
-        var pTwo = $("<p>").text("Overview: " + overview);
+      // Creating an element to hold the overview
+      var pTwo = $("<p>").text("Overview: " + overview);
 
-        // Appending the plot
-        movieDiv.append(pTwo);
+      // Appending the plot
+      movieDiv.append(pTwo);
 
-        // Retrieving the URL for the image
-        // var imgURL = response.results[0].poster_path;
-        console.log('poster path: ', response.results[0].poster_path);
-        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[0].poster_path;
-        console.log(imgURL);
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
+      // Retrieving the URL for the image
+      // var imgURL = response.results[0].poster_path;
+      console.log('poster path: ', response.results[0].poster_path);
+      var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[0].poster_path;
+      console.log(imgURL);
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-        // Appending the image
-        movieDiv.append(image);
+      // Appending the image
+      movieDiv.append(image);
 
 
-        //=====================================results[1]
-        //get movieID for Showtime
-        var movieId = JSON.parse(response.results[1].id);
-        console.log(movieId);
+      //=====================================results[1]
+      //get movieID for Showtime
+      var movieId = JSON.parse(response.results[1].id);
+      console.log(movieId);
 
-        // Creating a div to hold the movie
-        var movieDiv = $("#movies-view");
+      // Creating a div to hold the movie
+      var movieDiv = $("#movies-view");
 
-        console.log('Title:', response.results[1].title);
-        var title = response.results[1].title;
-        var pMovieTitle = $("<p>").text("Movie Title: " + title);
-        movieDiv.append(pMovieTitle);
+      console.log('Title:', response.results[1].title);
+      var title = response.results[1].title;
+      var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      movieDiv.append(pMovieTitle);
 
-        console.log('Vote Average:', response.results[1].vote_average);
-        var vote = response.results[1].vote_average;
-        var pVote = $("<p>").text("Vote Average: " + vote);
-        movieDiv.append(pVote);
+      console.log('Vote Average:', response.results[1].vote_average);
+      var vote = response.results[1].vote_average;
+      var pVote = $("<p>").text("Vote Average: " + vote);
+      movieDiv.append(pVote);
 
-        // Storing the release date data
-        var releaseDate = response.results[1].release_date;
+      // Storing the release date data
+      var releaseDate = response.results[1].release_date;
 
-        // Creating an element to have the release date displayed
-        var pOne = $("<p>").text("Release date: " + releaseDate);
+      // Creating an element to have the release date displayed
+      var pOne = $("<p>").text("Release date: " + releaseDate);
 
-        // Displaying the releaseDate
-        movieDiv.append(pOne);
+      // Displaying the releaseDate
+      movieDiv.append(pOne);
 
-        // Storing the overview
-        var overview = response.results[1].overview;
+      // Storing the overview
+      var overview = response.results[1].overview;
 
-        // Creating an element to hold the overview
-        var pTwo = $("<p>").text("Overview: " + overview);
+      // Creating an element to hold the overview
+      var pTwo = $("<p>").text("Overview: " + overview);
 
-        // Appending the plot
-        movieDiv.append(pTwo);
+      // Appending the plot
+      movieDiv.append(pTwo);
 
-        // Retrieving the URL for the image
-        // var imgURL = response.results[0].poster_path;
-        console.log('poster path: ', response.results[1].poster_path);
-        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[1].poster_path;
-        console.log(imgURL);
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
+      // Retrieving the URL for the image
+      // var imgURL = response.results[0].poster_path;
+      console.log('poster path: ', response.results[1].poster_path);
+      var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[1].poster_path;
+      console.log(imgURL);
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-        // Appending the image
-        movieDiv.append(image);
+      // Appending the image
+      movieDiv.append(image);
 
-        //====================================results[2]
-        //get movieID for Showtime
-        var movieId = JSON.parse(response.results[2].id);
-        console.log(movieId);
+      //====================================results[2]
+      //get movieID for Showtime
+      var movieId = JSON.parse(response.results[2].id);
+      console.log(movieId);
 
-        // Creating a div to hold the movie
-        var movieDiv = $("#movies-view");
+      // Creating a div to hold the movie
+      var movieDiv = $("#movies-view");
 
-        console.log('Title:', response.results[2].title);
-        var title = response.results[2].title;
-        var pMovieTitle = $("<p>").text("Movie Title: " + title);
-        movieDiv.append(pMovieTitle);
+      console.log('Title:', response.results[2].title);
+      var title = response.results[2].title;
+      var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      movieDiv.append(pMovieTitle);
 
-        console.log('Vote Average:', response.results[2].vote_average);
-        var vote = response.results[2].vote_average;
-        var pVote = $("<p>").text("Vote Average: " + vote);
-        movieDiv.append(pVote);
+      console.log('Vote Average:', response.results[2].vote_average);
+      var vote = response.results[2].vote_average;
+      var pVote = $("<p>").text("Vote Average: " + vote);
+      movieDiv.append(pVote);
 
-        // Storing the release date data
-        var releaseDate = response.results[2].release_date;
+      // Storing the release date data
+      var releaseDate = response.results[2].release_date;
 
-        // Creating an element to have the release date displayed
-        var pOne = $("<p>").text("Release date: " + releaseDate);
+      // Creating an element to have the release date displayed
+      var pOne = $("<p>").text("Release date: " + releaseDate);
 
-        // Displaying the releaseDate
-        movieDiv.append(pOne);
+      // Displaying the releaseDate
+      movieDiv.append(pOne);
 
-        // Storing the overview
-        var overview = response.results[2].overview;
+      // Storing the overview
+      var overview = response.results[2].overview;
 
-        // Creating an element to hold the overview
-        var pTwo = $("<p>").text("Overview: " + overview);
+      // Creating an element to hold the overview
+      var pTwo = $("<p>").text("Overview: " + overview);
 
-        // Appending the plot
-        movieDiv.append(pTwo);
+      // Appending the plot
+      movieDiv.append(pTwo);
 
-        // Retrieving the URL for the image
-        // var imgURL = response.results[0].poster_path;
-        console.log('poster path: ', response.results[2].poster_path);
-        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[2].poster_path;
-        console.log(imgURL);
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
+      // Retrieving the URL for the image
+      // var imgURL = response.results[0].poster_path;
+      console.log('poster path: ', response.results[2].poster_path);
+      var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[2].poster_path;
+      console.log(imgURL);
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-        // Appending the image
-        movieDiv.append(image);
+      // Appending the image
+      movieDiv.append(image);
 
-        //==============================results[3]
+      //==============================results[3]
 
-        //get movieID for Showtime
-        var movieId = JSON.parse(response.results[3].id);
-        console.log(movieId);
+      //get movieID for Showtime
+      var movieId = JSON.parse(response.results[3].id);
+      console.log(movieId);
 
-        // Creating a div to hold the movie
-        var movieDiv = $("#movies-view");
+      // Creating a div to hold the movie
+      var movieDiv = $("#movies-view");
 
-        console.log('Title:', response.results[3].title);
-        var title = response.results[3].title;
-        var pMovieTitle = $("<p>").text("Movie Title: " + title);
-        movieDiv.append(pMovieTitle);
+      console.log('Title:', response.results[3].title);
+      var title = response.results[3].title;
+      var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      movieDiv.append(pMovieTitle);
 
-        console.log('Vote Average:', response.results[3].vote_average);
-        var vote = response.results[3].vote_average;
-        var pVote = $("<p>").text("Vote Average: " + vote);
-        movieDiv.append(pVote);
+      console.log('Vote Average:', response.results[3].vote_average);
+      var vote = response.results[3].vote_average;
+      var pVote = $("<p>").text("Vote Average: " + vote);
+      movieDiv.append(pVote);
 
-        // Storing the release date data
-        var releaseDate = response.results[3].release_date;
+      // Storing the release date data
+      var releaseDate = response.results[3].release_date;
 
-        // Creating an element to have the release date displayed
-        var pOne = $("<p>").text("Release date: " + releaseDate);
+      // Creating an element to have the release date displayed
+      var pOne = $("<p>").text("Release date: " + releaseDate);
 
-        // Displaying the releaseDate
-        movieDiv.append(pOne);
+      // Displaying the releaseDate
+      movieDiv.append(pOne);
 
-        // Storing the overview
-        var overview = response.results[3].overview;
+      // Storing the overview
+      var overview = response.results[3].overview;
 
-        // Creating an element to hold the overview
-        var pTwo = $("<p>").text("Overview: " + overview);
+      // Creating an element to hold the overview
+      var pTwo = $("<p>").text("Overview: " + overview);
 
-        // Appending the plot
-        movieDiv.append(pTwo);
+      // Appending the plot
+      movieDiv.append(pTwo);
 
-        // Retrieving the URL for the image
-        // var imgURL = response.results[0].poster_path;
-        console.log('poster path: ', response.results[3].poster_path);
-        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[3].poster_path;
-        console.log(imgURL);
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
+      // Retrieving the URL for the image
+      // var imgURL = response.results[0].poster_path;
+      console.log('poster path: ', response.results[3].poster_path);
+      var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[3].poster_path;
+      console.log(imgURL);
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-        // Appending the image
-        movieDiv.append(image);
-        //===============================results[4]
-        //get movieID for Showtime
-        var movieId = JSON.parse(response.results[4].id);
-        console.log(movieId);
+      // Appending the image
+      movieDiv.append(image);
+      //===============================results[4]
+      //get movieID for Showtime
+      var movieId = JSON.parse(response.results[4].id);
+      console.log(movieId);
 
-        // Creating a div to hold the movie
-        var movieDiv = $("#movies-view");
+      // Creating a div to hold the movie
+      var movieDiv = $("#movies-view");
 
-        console.log('Title:', response.results[4].title);
-        var title = response.results[4].title;
-        var pMovieTitle = $("<p>").text("Movie Title: " + title);
-        movieDiv.append(pMovieTitle);
+      console.log('Title:', response.results[4].title);
+      var title = response.results[4].title;
+      var pMovieTitle = $("<p>").text("Movie Title: " + title);
+      movieDiv.append(pMovieTitle);
 
-        console.log('Vote Average:', response.results[4].vote_average);
-        var vote = response.results[0].vote_average;
-        var pVote = $("<p>").text("Vote Average: " + vote);
-        movieDiv.append(pVote);
+      console.log('Vote Average:', response.results[4].vote_average);
+      var vote = response.results[0].vote_average;
+      var pVote = $("<p>").text("Vote Average: " + vote);
+      movieDiv.append(pVote);
 
-        // Storing the release date data
-        var releaseDate = response.results[4].release_date;
+      // Storing the release date data
+      var releaseDate = response.results[4].release_date;
 
-        // Creating an element to have the release date displayed
-        var pOne = $("<p>").text("Release date: " + releaseDate);
+      // Creating an element to have the release date displayed
+      var pOne = $("<p>").text("Release date: " + releaseDate);
 
-        // Displaying the releaseDate
-        movieDiv.append(pOne);
+      // Displaying the releaseDate
+      movieDiv.append(pOne);
 
-        // Storing the overview
-        var overview = response.results[4].overview;
+      // Storing the overview
+      var overview = response.results[4].overview;
 
-        // Creating an element to hold the overview
-        var pTwo = $("<p>").text("Overview: " + overview);
+      // Creating an element to hold the overview
+      var pTwo = $("<p>").text("Overview: " + overview);
 
-        // Appending the plot
-        movieDiv.append(pTwo);
+      // Appending the plot
+      movieDiv.append(pTwo);
 
-        // Retrieving the URL for the image
-        // var imgURL = response.results[0].poster_path;
-        console.log('poster path: ', response.results[4].poster_path);
-        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[4].poster_path;
-        console.log(imgURL);
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
+      // Retrieving the URL for the image
+      // var imgURL = response.results[0].poster_path;
+      console.log('poster path: ', response.results[4].poster_path);
+      var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[4].poster_path;
+      console.log(imgURL);
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-        // Appending the image
-        movieDiv.append(image);
-        //====================================End of results==================
+      // Appending the image
+      movieDiv.append(image);
+      //====================================End of results==================
 
-        var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "https://api.themoviedb.org/3/movie/" + movieId + "/videos?language=en-US&api_key=88887032dc1d0d80dd7ccbd783133865",
-          "method": "GET",
-          "headers": {},
-          "data": "{}"
-        }
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.themoviedb.org/3/movie/" + movieId + "/videos?language=en-US&api_key=88887032dc1d0d80dd7ccbd783133865",
+        "method": "GET",
+        "headers": {},
+        "data": "{}"
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+
+        console.log(response.id);
+        console.log(response.results[0]);
+        console.log(response.results[0].key);
+
+        var youTubeKey = response.results[0].key;
+        console.log(youTubeKey);
         
-        $.ajax(settings).done(function (response) {
-          console.log(response);
-
-          // console.log('Key: ', responseA.results[0].key);
-        });
- 
-        
+        //var trailersDiv = $("#trailers-view");
+        var trailerURL = "https://www.youtube.com/watch?v="+ youTubeKey;
+        console.log(trailerURL);
         
 
-        // console.log(response.id);
-        // console.log('youtube: ' , response.results[1].key);
+        // var obj = {"video": {
+        //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0' allowFullScreen></iframe>"
+        // }}
+        // document.write(obj.video.value);
 
-        // var trailersDiv = $("#trailers-view");
-        // // Retrieving the trailer videos
+        // var obj = {"video": {
+        //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='640' height='390' src='trailerURl' frameborder='0' allowFullScreen></iframe>"
+        // }}
+        // document.write(obj.video.value);
 
-        // http://api.themoviedb.org/3/movie/157336?api_key=###&append_to_response=videos
-        // var trailerInfo = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=88887032dc1d0d80dd7ccbd783133865";
-        // console.log(trailerInfo);
-
-        // console.log(results[0].key);
-
-        // console.log("Youtube Key: ", results[0].key);
-
-        // var video = $("<vid>").attr("src", trailer);
-        // trailersDiv.append(video);
+        // console.log('Key: ', responseA.results[0].key);
+      });
 
 
 
-      
+
+      // console.log(response.id);
+      // console.log('youtube: ' , response.results[1].key);
+
+      // var trailersDiv = $("#trailers-view");
+      // // Retrieving the trailer videos
+
+      // http://api.themoviedb.org/3/movie/157336?api_key=###&append_to_response=videos
+      // var trailerInfo = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=88887032dc1d0d80dd7ccbd783133865";
+      // console.log(trailerInfo);
+
+      // console.log(results[0].key);
+
+      // console.log("Youtube Key: ", results[0].key);
+
+      // var video = $("<vid>").attr("src", trailer);
+      // trailersDiv.append(video);
+
+
+
+
 
     });
 
