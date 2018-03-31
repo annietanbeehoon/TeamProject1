@@ -44,6 +44,7 @@ $(document).ready(function () {
         console.log(response.results[i]);
       }
 
+      //============================results[0]
         //get movieID for Showtime
         var movieId = JSON.parse(response.results[0].id);
         console.log(movieId);
@@ -90,6 +91,195 @@ $(document).ready(function () {
         // Appending the image
         movieDiv.append(image);
 
+
+        //=====================================results[1]
+        //get movieID for Showtime
+        var movieId = JSON.parse(response.results[1].id);
+        console.log(movieId);
+
+        // Creating a div to hold the movie
+        var movieDiv = $("#movies-view");
+
+        console.log('Title:', response.results[1].title);
+        var title = response.results[1].title;
+        var pMovieTitle = $("<p>").text("Movie Title: " + title);
+        movieDiv.append(pMovieTitle);
+
+        console.log('Vote Average:', response.results[1].vote_average);
+        var vote = response.results[1].vote_average;
+        var pVote = $("<p>").text("Vote Average: " + vote);
+        movieDiv.append(pVote);
+
+        // Storing the release date data
+        var releaseDate = response.results[1].release_date;
+
+        // Creating an element to have the release date displayed
+        var pOne = $("<p>").text("Release date: " + releaseDate);
+
+        // Displaying the releaseDate
+        movieDiv.append(pOne);
+
+        // Storing the overview
+        var overview = response.results[1].overview;
+
+        // Creating an element to hold the overview
+        var pTwo = $("<p>").text("Overview: " + overview);
+
+        // Appending the plot
+        movieDiv.append(pTwo);
+
+        // Retrieving the URL for the image
+        // var imgURL = response.results[0].poster_path;
+        console.log('poster path: ', response.results[1].poster_path);
+        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[1].poster_path;
+        console.log(imgURL);
+        // Creating an element to hold the image
+        var image = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        movieDiv.append(image);
+
+        //====================================results[2]
+        //get movieID for Showtime
+        var movieId = JSON.parse(response.results[2].id);
+        console.log(movieId);
+
+        // Creating a div to hold the movie
+        var movieDiv = $("#movies-view");
+
+        console.log('Title:', response.results[2].title);
+        var title = response.results[2].title;
+        var pMovieTitle = $("<p>").text("Movie Title: " + title);
+        movieDiv.append(pMovieTitle);
+
+        console.log('Vote Average:', response.results[2].vote_average);
+        var vote = response.results[2].vote_average;
+        var pVote = $("<p>").text("Vote Average: " + vote);
+        movieDiv.append(pVote);
+
+        // Storing the release date data
+        var releaseDate = response.results[2].release_date;
+
+        // Creating an element to have the release date displayed
+        var pOne = $("<p>").text("Release date: " + releaseDate);
+
+        // Displaying the releaseDate
+        movieDiv.append(pOne);
+
+        // Storing the overview
+        var overview = response.results[2].overview;
+
+        // Creating an element to hold the overview
+        var pTwo = $("<p>").text("Overview: " + overview);
+
+        // Appending the plot
+        movieDiv.append(pTwo);
+
+        // Retrieving the URL for the image
+        // var imgURL = response.results[0].poster_path;
+        console.log('poster path: ', response.results[2].poster_path);
+        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[2].poster_path;
+        console.log(imgURL);
+        // Creating an element to hold the image
+        var image = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        movieDiv.append(image);
+
+        //==============================results[3]
+
+        //get movieID for Showtime
+        var movieId = JSON.parse(response.results[3].id);
+        console.log(movieId);
+
+        // Creating a div to hold the movie
+        var movieDiv = $("#movies-view");
+
+        console.log('Title:', response.results[3].title);
+        var title = response.results[3].title;
+        var pMovieTitle = $("<p>").text("Movie Title: " + title);
+        movieDiv.append(pMovieTitle);
+
+        console.log('Vote Average:', response.results[3].vote_average);
+        var vote = response.results[3].vote_average;
+        var pVote = $("<p>").text("Vote Average: " + vote);
+        movieDiv.append(pVote);
+
+        // Storing the release date data
+        var releaseDate = response.results[3].release_date;
+
+        // Creating an element to have the release date displayed
+        var pOne = $("<p>").text("Release date: " + releaseDate);
+
+        // Displaying the releaseDate
+        movieDiv.append(pOne);
+
+        // Storing the overview
+        var overview = response.results[3].overview;
+
+        // Creating an element to hold the overview
+        var pTwo = $("<p>").text("Overview: " + overview);
+
+        // Appending the plot
+        movieDiv.append(pTwo);
+
+        // Retrieving the URL for the image
+        // var imgURL = response.results[0].poster_path;
+        console.log('poster path: ', response.results[3].poster_path);
+        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[3].poster_path;
+        console.log(imgURL);
+        // Creating an element to hold the image
+        var image = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        movieDiv.append(image);
+        //===============================results[4]
+        //get movieID for Showtime
+        var movieId = JSON.parse(response.results[4].id);
+        console.log(movieId);
+
+        // Creating a div to hold the movie
+        var movieDiv = $("#movies-view");
+
+        console.log('Title:', response.results[4].title);
+        var title = response.results[4].title;
+        var pMovieTitle = $("<p>").text("Movie Title: " + title);
+        movieDiv.append(pMovieTitle);
+
+        console.log('Vote Average:', response.results[4].vote_average);
+        var vote = response.results[0].vote_average;
+        var pVote = $("<p>").text("Vote Average: " + vote);
+        movieDiv.append(pVote);
+
+        // Storing the release date data
+        var releaseDate = response.results[4].release_date;
+
+        // Creating an element to have the release date displayed
+        var pOne = $("<p>").text("Release date: " + releaseDate);
+
+        // Displaying the releaseDate
+        movieDiv.append(pOne);
+
+        // Storing the overview
+        var overview = response.results[4].overview;
+
+        // Creating an element to hold the overview
+        var pTwo = $("<p>").text("Overview: " + overview);
+
+        // Appending the plot
+        movieDiv.append(pTwo);
+
+        // Retrieving the URL for the image
+        // var imgURL = response.results[0].poster_path;
+        console.log('poster path: ', response.results[4].poster_path);
+        var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[4].poster_path;
+        console.log(imgURL);
+        // Creating an element to hold the image
+        var image = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        movieDiv.append(image);
+        //====================================End of results==================
 
         var settings = {
           "async": true,
