@@ -22,15 +22,13 @@ var arrShowtimes = [];
 $(document).ready(function () {
     console.log("ready!");
 
-    // geoFindMe();
-    // map1();
-    // map2a();
+   
     var movieID = $("#movieList").change(function () {
         console.log($(this).val());
         Ajax_withMovieID($(this).val());
     });
 
-    //use momnetjs to crete time string for tomorrow date
+    //use momment.js to create time string for tomorrow date
     // to limit showtime-- if not will bring back 7 days worth of movies
 
     myTomorrow = moment().add(1, 'days').format();
