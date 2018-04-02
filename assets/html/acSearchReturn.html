@@ -13,22 +13,22 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="../css/acStyle-test.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style id="antiClickjack">
-        body {
+    <!-- <style id="antiClickjack"> -->
+        <!-- body {
             display: none !important;
-        }
+        } -->
     </style>
 </head>
 
 <body>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         if (self === top) {
             var antiClickjack = document.getElementById("antiClickjack");
             antiClickjack.parentNode.removeChild(antiClickjack);
         } else {
             top.location = self.location;
         }
-    </script>
+    </script> -->
     <main class="wrapper">
         <section class="section parallax bg1">
             <h1>The Dinner and a Movie App!</h1>
@@ -93,8 +93,9 @@
             </div>
             <hr>
             <div id="trailer-view" class="pure-u-1 pure-u-md-1 pure-u-lg-1">
-                <video class="video" width="420" height="315">
-                </video>
+                <iframe class="video" width="420" height="315" src="http://www.youtube.com/embed/nIsCs9_-LP8" frameborder="0" allowfullscreen></iframe>
+                <!--<video class="video" allowfullscreen>     
+                </video>-->
             </div>
         </div>
         <div id="side-view" class="pure-u-1">

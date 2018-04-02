@@ -104,13 +104,13 @@ $(document).ready(function () {
         console.log(youTubeKey);
 
         //var trailersDiv = $("#trailers-view");
-        var trailerURL = "https://www.youtube.com/watch?v=" + youTubeKey;
+        var trailerURL = "https://www.youtube.com/embed/" + youTubeKey;
         console.log(trailerURL);
 
         // Creating an element to hold the image
         $(".video").attr("src", trailerURL);
         // Appending the image
-        trailerDiv.append(trailerURL);
+        //trailerDiv.append(trailerURL);
       });
 
 
