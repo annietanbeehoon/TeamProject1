@@ -74,7 +74,7 @@ function get_Showtimes(iShowtimes_id) {
             "append": "cinema",
             //"movie_fields:":"scene_images.flat",
             "fields": "cinema_id,start_at,cinema_movie_title,booking_link,title,slug,poster_image_thumbnail",
-            "location": latLon,
+            "location": get_latlon(),
         },
         headers: {
             "X-API-Key": ApiKey_iShowtimes,
