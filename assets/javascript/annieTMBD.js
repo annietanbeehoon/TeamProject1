@@ -24,10 +24,6 @@ $(document).ready(function () {
     movieSearch[2] = $("#genre-input").val().trim().replace(/ /g, '+');
     movieSearch[3] = $("#year-input").val().trim().replace(/ /g, '+');
 
-    
-
-
-
     console.log(movieSearch);
     queryURL += movieSearch;
 
@@ -97,9 +93,9 @@ $(document).ready(function () {
       movieDiv.append(image);
 
       $("#movie-input").val("");
-    $("#actor-input").val("");
-    $("#genre-input").val("");
-    $("#myear-input").val("");
+      $("#actor-input").val("");
+      $("#genre-input").val("");
+      $("#myear-input").val("");
 
 
 
@@ -198,9 +194,9 @@ $(document).ready(function () {
       movieDiv.append(image);
 
       $("#movie-input").val("");
-    $("#actor-input").val("");
-    $("#genre-input").val("");
-    $("#myear-input").val("");
+      $("#actor-input").val("");
+      $("#genre-input").val("");
+      $("#myear-input").val("");
 
 
       //==============================results[3]
@@ -298,9 +294,9 @@ $(document).ready(function () {
       movieDiv.append(image);
 
       $("#movie-input").val("");
-    $("#actor-input").val("");
-    $("#genre-input").val("");
-    $("#myear-input").val("");
+      $("#actor-input").val("");
+      $("#genre-input").val("");
+      $("#myear-input").val("");
 
       //====================================End of results==================
 
@@ -322,11 +318,11 @@ $(document).ready(function () {
 
         var youTubeKey = response.results[0].key;
         console.log(youTubeKey);
-        
+
         //var trailersDiv = $("#trailers-view");
-        var trailerURL = "https://www.youtube.com/watch?v="+ youTubeKey;
+        var trailerURL = "https://www.youtube.com/watch?v=" + youTubeKey;
         console.log(trailerURL);
-        
+
 
         // var obj = {"video": {
         //   "value": "<iframe title='YouTube video player' type=\"text/html\" width='300' height='150' src='http://www.youtube.com/embed/W-Q7RMpINVo' frameborder='0'></iframe>"
