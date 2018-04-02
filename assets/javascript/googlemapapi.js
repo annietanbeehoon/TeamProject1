@@ -5,11 +5,11 @@
 
 // for now - using google api key here
 
-const ApiKey_googleMaps = "AIzaSyDSMDeXXQxaeLJ4ZGXuwSKAM3NHBP4ckTc";
+//const ApiKey_googleMaps = "AIzaSyDSMDeXXQxaeLJ4ZGXuwSKAM3NHBP4ckTc";
 
 
-var Latitude;
-var Longitude;
+// var Latitude;
+// var Longitude;
 var map;
 
 var hasPromiseReturned = false;
@@ -30,7 +30,7 @@ function geoFindMe() {
         var img = new Image();
         img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon
             + "&zoom=13&size=300x300&sensor=false";
-        output.append(img);
+        output.append(img);        
     }
 
     function error() {
@@ -67,7 +67,7 @@ async function map4() {
      
     src = "https://maps.googleapis.com/maps/api/js?key=" + ApiKey_googleMaps + "&callback=initMap";
     var options = {
-        zoom: 6,
+        zoom: 14,
         center: { lat: Latitude, lng: Longitude }
     }
     var map = new google.maps.Map(document.getElementById('myMap4'), options);
@@ -92,7 +92,7 @@ async function map4() {
 
 
 
-function getPosition() {
+ async function getPosition() {
     return new Promise((res, rej) => {
         navigator.geolocation.getCurrentPosition(res, rej);
     });
@@ -105,17 +105,20 @@ async function main_GetPosition() {
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
     hasPromiseReturned = true;
-    map1();
-    console.log('hasPromiseReturned', hasPromiseReturned);
-    map4();   
+    position = position;
+    var map1loaded = await  map1( position);
+    var map4loaded = await  map4( position);
+
+    console.log('hasPromiseReturned', hasPromiseReturned , Latitude,Longitude);
+       
 }
 
-$(document).ready(function () {
-    //get geolocation
-    main_GetPosition();  //gets geo locatin and creaets  map1
-    geoFindMe();         //map2
-    //map4(); //<=== needs to be in main_GetPosition- because of promise //map4 
-});
+// $(document).ready(function () {
+//     //get geolocation
+//     main_GetPosition();  //gets geo locatin and creaets  map1
+//     geoFindMe();         //map2
+//     //map4(); //<=== needs to be in main_GetPosition- because of promise //map4 
+// });
 
 
 
