@@ -1,234 +1,254 @@
-/* styles entire body */
-body {
-    width: 90%;
+hr {
+    border-width: 1px;
+}
+
+.rating-score {
+    color: rgb(65, 230, 65);
+}
+
+#main-view { 
+    width: 75%;
+    background: rgb(182, 182, 182);
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#info-view {
+    display: block;
+    text-align: center;
+}
+
+.title-format {
+    margin-bottom: 2px;
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.title-format {
+    background: rgb(0, 5, 57);
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    margin: 0 auto;
+}
+
+.year-format {
+    color: black;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+form {
+    margin-top: 2px;
+    text-align: center;
+}
+
+input {
+    height: 70px;
+    width: 70px;
+}
+
+.poster-format {
+    max-width: 95%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+.trailer-format {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+#side-view {
+    width: 75%;
+    background: rgb(182, 182, 182);
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#rating-view {
+    text-align: center;
+    background: rgb(0, 5, 57);
+    color: rgb(248, 248, 248);
+    height: 30px;
+}
+
+.rating-format {
+    line-height: 32px;
+    letter-spacing: 1.5px;
+}
+
+#plot-view {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
 }
 
-/* styles entire table */
-table {
-    width: 100%;
-    margin-bottom: 40px;
+.plot-format {
+    margin: 15px;
+    max-width: 95%;
+    margin-bottom: 0;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    max-height: 250px;
+    overflow: scroll;
 }
 
-/* sticks column content to the very top */
-td {
-    vertical-align: top;
+@media screen and (min-width: 35.5em) {
+    .trailer-format {
+        height: 200px;
+    }
 }
 
-/* sticks column content in the center */
-td#rating-slot {
-    vertical-align: middle;
-    text-align: center;
-    border-right-style: solid;
-    border-right-color: rgb(170, 170, 170);
-    border-right-width: 0.5px;
+@media screen and (min-width: 48em) {
+    .trailer-format {
+        height: 250px;
+    }
 }
 
-/* styles the year content */
-#year-slot {
-    font-style: italic;
-    font-weight: lighter;
-    margin-top: 6px;
-    text-align: left;
+@media screen and (min-width: 64em) {
+    .trailer-format {
+        height: 350px;
+    }
 }
 
-/* keeps the height of each row the same */
-tbody {
-    height: 210px;
+@media screen and (min-width: 80em) {
+    .trailer-format {
+        height: 450px;
+    }
 }
 
-/* styles the buttons and keeps it on the edge of the body */
+#buttons-view {
+    width: 75%;
+    margin: 0 auto;
+}
+
 .pure-button {
     margin-bottom: 8px;
-    width: 155px;
     display: flex;
     align-items: center;
     text-align: left;
-    float: right;
-    margin-left: 8px;
+    width: 100%;
+    max-width: 210px;
 }
 
-hr {
-    clear: both;
+.button-text {
+    font-size: 18px;
+    margin-top: 2px;
+    font-weight: lighter;
 }
 
-/* button changes color when user hovers over */
 button:hover {
     background: rgb(18, 83, 223);
 }
 
-/* button changes color when user clicks button */
 button:active {
     background: rgb(14, 64, 170);
 }
 
-/* styles the text within the buttons */
-span.button-text {
-    font-size: 12.5px;
-    margin-top: 2px;
-}
-
-/* styles the icons within the buttons */
 #movie-logo,
 #food-logo {
-    max-height: 40px;
-    max-width: 40px;
+    max-height: 72px;
+    max-width: 72px;
     width: 100%;
     height: 100%;
     padding-right: 10px;
     margin-top: 1px;
     margin-left: -2px;
-    margin-right: 4px;
-    border: none;
+    margin-right: 2px;
 }
 
-/* formats the size of the incoming posters, sets animation speed to 1 second, and assigns a border */
-img {
-    height: 210px;
-    width: 140px;
-    margin: auto 0;
-    margin-right: -65px;
-    margin-top: 3px;
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -o-transition: all 1s ease; /* IE 9 */
-    -ms-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: black;
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
 }
 
-/* gives the poster a size growth animation */
-img:hover {
-    -webkit-transform:scale(1.5); /* Safari and Chrome */
-    -moz-transform:scale(1.5); /* Firefox */
-    -ms-transform:scale(1.5); /* IE 9 */
-    -o-transform:scale(1.5); /* Opera */
-     transform:scale(1.5);
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
 }
 
-/* styles the movie trailer */
-iframe {
-    margin-top: 3px;
-    height: 210px;
-    width: 400px;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: black;
-    margin-right: -160px;
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
 }
 
-/* styles the plot */
-td#synopsis-slot {
-    background: rgb(209, 209, 209);
-    margin-top: 8px;
-    width: 50px;
-    height: 205px;
-    overflow: scroll;
-    padding: 4px, 4px, 4px, 4px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(133, 133, 133);
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
 }
 
-/* styles the content within the synopsis */
-p {
-    overflow: scroll;
-    max-height: 210px;
-    margin-top: 4px;
-}
+.close:hover { background: #00d9ff; }
 
-/* styles the table header */
-th {
-    background: rgb(10, 0, 70);
-    color: white;
-}
-
-/* styles the table row */
-tr {
-    font-size: 14px;
-    background: rgb(231, 231, 231);
-}
-
-.thin-column {
-    text-align: center;
-}
-
-td#radio-slot {
-   vertical-align: middle;
-   text-align: center;
-}
-
-/* MEDIA QUERIES */
-
-/* larger or equal to 1280px */
-@media screen and (min-width: 80em) {
-    td#rating-slot,
-    td#year-slot {
-        width: 50px;
-    }
-
-    td#poster-slot {
-        width: 141px;
-    }
-
-    td#synopsis-slot {
-        width: 200px;
-    }
-}
-
-/* larger or equal to 1024px */
-@media screen and (min-width: 64em) {
-    
-    td#poster-slot {
-        width: 120px;
-    }
-
-    iframe {
-        height: 210px;
-        width: 96%;
-    }
-
-    td#trailer-slot {
-        width: 380px;
-    }
-
-    td#radio-slot {
-        width: 10px;
-    }
-
-    td#rating-slot {
-        width: 10px;
-    }
-
-    img:hover {
-        -webkit-transform:scale(1.2); /* Safari and Chrome */
-        -moz-transform:scale(1.2); /* Firefox */
-        -ms-transform:scale(1.2); /* IE 9 */
-        -o-transform:scale(1.2); /* Opera */
-         transform:scale(1.2);
-    }
-}
-
-/* larger or equal to 768px */
-@media screen and (min-width: 48em) {
-
-    td#radio-slot {
-        width: 10px;
-    }
-
-    td#rating-slot {
-        width: 10px;
-    }
-
-    iframe {
-        width: 375px;
-    }
-
-    td#synopsis-slot {
-        width: 120px;
-    }
+a {
+    text-decoration-line: none;
 }
