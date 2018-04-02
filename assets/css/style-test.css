@@ -1,19 +1,22 @@
 hr {
-    width: 65%;
-    border-width: 0.5px;
+    border-width: 1px;
+}
+
+.rating-score {
+    color: rgb(65, 230, 65);
 }
 
 #main-view { 
     width: 75%;
-    background: rgb(224, 224, 224);
+    background: rgb(182, 182, 182);
     margin: 0 auto;
     display: block;
     border-radius: 4px;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
     border-style: solid;
-    border-width: 0.5px;
-    border-color: rgb(168, 168, 168);
+    border-width: 1px;
+    border-color: black;
 }
 
 #info-view {
@@ -23,24 +26,26 @@ hr {
 
 .title-format {
     margin-bottom: 2px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: lighter;
+    letter-spacing: 1px;
 }
 
 .title-format {
-    background: rgb(27, 27, 27);
+    background: rgb(0, 5, 57);
     color: white;
-    padding-top: 4px;
-    padding-bottom: 2px;
+    padding-top: 8px;
+    padding-bottom: 6px;
     margin: 0 auto;
 }
 
 .year-format {
-    color: rgb(58, 58, 58);
+    color: black;
     font-size: 16px;
     padding-top: 12px;
     padding-bottom: 8px;
     font-weight: lighter;
+    letter-spacing: 2px;
 }
 
 form {
@@ -54,28 +59,29 @@ input {
 }
 
 .poster-format {
-    max-width: 350px;
+    max-width: 95%;
+    height: auto;
     display: block;
     margin: 0 auto;
     margin-top: 2px;
     margin-bottom: 10px;
     border-style: solid;
-    border-width: 0.5px;
-    border-color: rgb(104, 104, 104);
+    border-width: 1px;
+    border-color: black;
     border-radius: 4px;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
 }
 
 .trailer-format {
-    width: 350px;
+    width: 95%;
     display: block;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 20px;
     border-style: solid;
-    border-width: 0.5px;
-    border-color: rgb(104, 104, 104);
+    border-width: 1px;
+    border-color: black;
     border-radius: 4px;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
@@ -83,22 +89,25 @@ input {
 
 #side-view {
     width: 75%;
-    background: rgba(113, 113, 113, 0.4);
+    background: rgb(182, 182, 182);
     margin: 0 auto;
     display: block;
     margin-top: 10px;
-    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 #rating-view {
     text-align: center;
-    background: rgb(27, 27, 27);
+    background: rgb(0, 5, 57);
     color: rgb(248, 248, 248);
     height: 30px;
 }
 
 .rating-format {
     line-height: 32px;
+    letter-spacing: 1.5px;
 }
 
 #plot-view {
@@ -108,14 +117,13 @@ input {
 
 .plot-format {
     margin: 15px;
-    margin-left: 38px;
-    margin-right: 37px;
+    max-width: 95%;
     margin-bottom: 0;
     background: rgb(255, 255, 255);
     padding: 10px;
     border-style: solid;
-    border-width: 0.5px;
-    border-color: rgb(104, 104, 104);
+    border-width: 1px;
+    border-color: black;
     border-radius: 4px;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
@@ -123,46 +131,28 @@ input {
     overflow: scroll;
 }
 
-@media screen and (min-width: 64em) {
-    
-    #main-view {
-        width: 85%;
-    }
-
-    .poster-format {
-        max-width: 600px;
-    }
-
-    #side-view {
-        width: 85%;
-    }
-
+@media screen and (min-width: 35.5em) {
     .trailer-format {
-        width: 600px;
-        height: 300px;
+        height: 200px;
     }
+}
 
+@media screen and (min-width: 48em) {
+    .trailer-format {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .trailer-format {
+        height: 350px;
+    }
 }
 
 @media screen and (min-width: 80em) {
-
-    #main-view {
-        width: 90%;
-    }
-
-    .poster-format {
-        max-width: 1200px;
-    }
-
-    #side-view {
-        width: 90%;
-    }
-
     .trailer-format {
-        width: 1000px;
-        height: 500px;
+        height: 450px;
     }
-
 }
 
 .pure-button {
