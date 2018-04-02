@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Return</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="../css/acStyle-test.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <main class="wrapper">
+        <section class="section parallax bg1">
+            <h1>The Dinner and a Movie App!</h1>
+        </section>
+
+        <section class="section static">
+            <div class="row">
+                <div class="col">
+                    <h2>Enter Your Movie!</h2>
+                    <form class="pure-form pure-form-aligned">
+                        <fieldset>
+                            <div class="pure-control-group">
+                                <label for="movie-input">Movie</label>
+                                <input id="movie-input" type="text" placeholder="Movie">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="actor">Actor</label>
+                                <input id="actor-input" type="text" placeholder="Actor">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="genre">Genre</label>
+                                <input id="genre-input" type="text" placeholder="Genre">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="year">Year</label>
+                                <input id="year-input" type="text" placeholder="Year">
+                            </div>
+
+                            <div class="pure-controls">
+                                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col">
+                    <div id="movies-view"></div>
+                </div>
+                <div class="col">
+                    <div id="trailers-view"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section parallax bg2">
+            <h1>Have Fun!</h1>
+        </section>
+
+
+    </main>
+    <hr>
+    <div id="whole-view" class="pure-u-1">
+        <div id="main-view" class="pure-u-1">
+            <div id="info-view" class="pure-u-1 pure-u-md-1 pure-u-lg-1">
+                <p class="title-format">Movie Search</p>
+                <p class="year-format"></p>
+            </div>
+            <div id="poster-view" class="pure-u-1 pure-u-md-1 pure-u-lg-1">
+                <img class="poster-format">
+            </div>
+            <hr>
+            <div id="trailer-view" class="pure-u-1 pure-u-md-1 pure-u-lg-1">
+                <video class="video" width="420" height="315">
+                </video>
+            </div>
+        </div>
+        <div id="side-view" class="pure-u-1">
+            <div id="rating-view" class="pure-u-1 pure-u-lg-1">
+                <p class="rating-format"></p>
+            </div>
+            <div id="plot-view" class="pure-u-1 pure-u-lg-1">
+                <p class="plot-format"></p>
+            </div>
+            <div id="checkbox-view" class="pure-u-1 pure-u-lg-1">
+                <form class="checkbox-format">
+                    <input type="checkbox" name="selection" value="1">
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="buttons">
+        <button class="pure-button pure-button-primary">
+            <img id="food-logo" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MDQgNTA0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDQgNTA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojOTBERkFBOyIgY3g9IjI1MiIgY3k9IjI1MiIgcj0iMjUyIi8+CjxwYXRoIHN0eWxlPSJmaWxsOiMyQzk5ODQ7IiBkPSJNNDkuOSw0MDIuNUM5NS44LDQ2NC4xLDE2OS4zLDUwNCwyNTIsNTA0czE1Ni4yLTM5LjksMjAyLjEtMTAxLjVINDkuOXoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0U2RTlFRTsiIGQ9Ik0zMTEuNiwzOTUuMmM2LjMtMi44LDEwLjMtOSwxMC4zLTE1Ljh2LTU5LjZjMC01LjItMi42LTkuOC02LjYtMTMuMWMtMi41LTIuMS00LTQuOS00LTcuOSAgYzAtNS4zLDQuNS05LjcsMTAuNi0xMS4xdi00aDcuOHY0YzYuMSwxLjQsMTAuNiw1LjgsMTAuNiwxMS4xYzAsMy4xLTEuNSw1LjktNCw3LjljLTQsMy4zLTYuNiw4LTYuNiwxMy4xdjU5LjYgIGMwLDYuOSw0LjEsMTMuMSwxMC4zLDE1LjhsMTYuNCw3LjJoLTI2LjdoLTcuOGgtMjYuN0wzMTEuNiwzOTUuMnoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik0zNzUuMSwxNzMuM2M3LDE3LjIsMTEuMSwzNy4xLDExLjEsNTZjMCw0OC42LTI3LDcyLjUtNjAuNCw3Mi41cy02MC40LTIzLjktNjAuNC03Mi41ICBjMC0xOC45LDQuMS0zOC44LDExLjEtNTZMMzc1LjEsMTczLjNMMzc1LjEsMTczLjN6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGRjcwNTg7IiBkPSJNMzgwLjIsMjEzLjdjMC44LDUuOSwxLjIsMTEuNywxLjIsMTcuNWMwLDQxLjctMjEuMyw2Ny42LTU1LjUsNjcuNnMtNTUuNS0yNS45LTU1LjUtNjcuNiAgYzAtNS43LDAuNC0xMS42LDEuMi0xNy41TDM4MC4yLDIxMy43TDM4MC4yLDIxMy43eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRjE1NDNGOyIgZD0iTTM0OS40LDI4MS41bDAuOS0wLjljMC43LTAuNywxLjYtMS42LDIuNy0yLjlzMi40LTIuOSwzLjgtNC44czIuOC00LjEsNC4xLTYuNiAgYzIuNy01LDUuMi0xMS4xLDYuOC0xNy45YzAuOC0zLjQsMS40LTYuOSwxLjktMTAuNWMwLjQtMy43LDAuNy03LjIsMC43LTExYzAuMS00LjQtMC4xLTguOC0wLjUtMTMuMWgtNS4zYzAuOCw0LjMsMS4zLDguNywxLjUsMTMuMiAgYzAuMiwzLjUsMC4yLDcuMywwLjEsMTAuN2MtMC4yLDMuNS0wLjUsNy0xLjEsMTAuM2MtMS4xLDYuNy0zLDEyLjgtNS4zLDE3LjhjLTEuMiwyLjUtMi40LDQuOC0zLjYsNi44cy0yLjQsMy42LTMuNCw0LjkgIGMtMSwxLjQtMS45LDIuNC0yLjUsM0MzNDkuOCwyODEsMzQ5LjUsMjgxLjMsMzQ5LjQsMjgxLjV6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNFNkU5RUU7IiBkPSJNMzU5LjUsMTczLjNoLTkuMWMwLjQsMC44LDEsMS44LDEuNiwzYzEuNSwyLjgsMy40LDcsNS40LDEyYzIuOCw3LDUuNSwxNS45LDcuMSwyNS40aDUuMyAgYy0wLjktMTAuMS0zLjEtMTkuNi01LjQtMjcuMWMtMS43LTUuNC0zLjQtOS44LTQuNy0xMi45QzM1OS42LDE3My41LDM1OS42LDE3My40LDM1OS41LDE3My4zeiIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojRkY3MDU4OyIgcG9pbnRzPSIxNjIuMyw5MC45IDE5NS40LDkwLjkgMjAxLjcsNjcuNiAxNTYsNjcuNiAiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzMyNEE1RTsiIGQ9Ik0xNjAuNiwxMzguMVY5NS42SDE5N3Y0Mi41YzAsOS4zLDQuOCwxNy44LDEyLjgsMjIuNmMxNy4zLDEwLjUsMjguOSwyOS41LDI4LjksNTEuMnYxNzYuMiAgYzAsNy42LTYuMiwxMy44LTEzLjgsMTMuOGgtOTIuMmMtNy42LDAtMTMuOC02LjItMTMuOC0xMy44VjIxMS45YzAtMjEuNywxMS42LTQwLjcsMjguOS01MS4yQzE1NS44LDE1NS45LDE2MC42LDE0Ny4zLDE2MC42LDEzOC4xeiAgIi8+CjxwYXRoIHN0eWxlPSJmaWxsOiNDRUQ1RTA7IiBkPSJNMTU2LjgsOTkuMWg0NGMwLjUsMCwwLjgtMC40LDAuOC0wLjh2LTkuNGMwLTAuNS0wLjQtMC44LTAuOC0wLjhoLTQ0Yy0wLjUsMC0wLjgsMC40LTAuOCwwLjh2OS40ICBDMTU2LDk4LjcsMTU2LjMsOTkuMSwxNTYuOCw5OS4xeiIvPgo8cmVjdCB4PSIxMTkiIHk9IjIzMS40IiBzdHlsZT0iZmlsbDojRkZEMDVCOyIgd2lkdGg9Ijk3LjciIGhlaWdodD0iMTA5LjkiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="
+            />
+            <span class="button-text">Show Local
+                <br>Restaurants</span>
+        </button>
+        <button class="pure-button pure-button-primary">
+            <img id="movie-logo" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTYuMiA0OTYuMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDk2LjIgNDk2LjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8cGF0aCBzdHlsZT0iZmlsbDojMzJCRUE2OyIgZD0iTTQ5Ni4yLDI0OC4xQzQ5Ni4yLDExMS4xLDM4NS4xLDAsMjQ4LjEsMFMwLDExMS4xLDAsMjQ4LjFzMTExLjEsMjQ4LjEsMjQ4LjEsMjQ4LjEgIFM0OTYuMiwzODUuMSw0OTYuMiwyNDguMXoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzNBM0EzODsiIGQ9Ik0zOTEsMzc2LjZjMCw2LjQtNS4yLDExLjYtMTEuNiwxMS42SDExM2MtNi40LDAtMTEuNi01LjItMTEuNi0xMS42VjE4Ni4xSDM5MUwzOTEsMzc2LjZMMzkxLDM3Ni42eiIvPgo8Zz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNCMEIwQUY7IiBkPSJNMzYxLjgsMjU4LjJIMTI3LjFjLTEuMSwwLTItMC45LTItMnMwLjktMiwyLTJoMjM0LjdjMS4xLDAsMiwwLjksMiwyUzM2Mi45LDI1OC4yLDM2MS44LDI1OC4yeiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0IwQjBBRjsiIGQ9Ik0zNjEuOCwyNzguNkgxMjcuMWMtMS4xLDAtMi0wLjktMi0yczAuOS0yLDItMmgyMzQuN2MxLjEsMCwyLDAuOSwyLDJTMzYyLjksMjc4LjYsMzYxLjgsMjc4LjZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojQjBCMEFGOyIgZD0iTTM2MS44LDI5OUgxMjcuMWMtMS4xLDAtMi0wLjktMi0yczAuOS0yLDItMmgyMzQuN2MxLjEsMCwyLDAuOSwyLDIgICBDMzYzLjcsMjk4LjEsMzYyLjksMjk5LDM2MS44LDI5OXoiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNCMEIwQUY7IiBkPSJNMzYxLjgsMzM0SDEyNy4xYy0xLjEsMC0yLDAuOS0yLDJzMC45LDIsMiwyaDcwLjN2MjcuOGMwLDEuMSwwLjksMiwyLDJzMi0wLjksMi0yVjMzOGg4Ny4xdjI3LjggICBjMCwxLjEsMC45LDIsMiwyczItMC45LDItMlYzMzhoNjkuNGMxLjEsMCwyLTAuOSwyLTJTMzYyLjksMzM0LDM2MS44LDMzNHoiLz4KPC9nPgo8Zz4KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjE4MSwyMjUuMiAxNTIuOSwyMjUuMiAxODIuNiwxODYuMSAyMTAuNywxODYuMSAgIi8+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgcG9pbnRzPSIyMzYuOCwyMjUuMiAyMDguNywyMjUuMiAyMzguNCwxODYuMSAyNjYuNSwxODYuMSAgIi8+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgcG9pbnRzPSIyOTEuNywyMjUuMiAyNjMuNiwyMjUuMiAyOTMuMywxODYuMSAzMjEuNCwxODYuMSAgIi8+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgcG9pbnRzPSIzNDcsMjI1LjIgMzE4LjksMjI1LjIgMzQ4LjYsMTg2LjEgMzc2LjcsMTg2LjEgICIvPgo8L2c+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMzQTNBMzg7IiBwb2ludHM9IjE1MS43LDEzNi44IDEyMy44LDE0MC4xIDE1OCwxNzUuMiAxODUuOSwxNzEuOCAiLz4KPGc+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgcG9pbnRzPSIxMjQuMiwxNDAuMSAxMDQuNywxNDIuNCAxMzAuNSwxNzguNSAxNTguMywxNzUuMiAgIi8+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgcG9pbnRzPSIxNzkuMiwxMzMuNSAxNTEuMywxMzYuOCAxODUuNCwxNzEuOSAyMTMuMywxNjguNSAgIi8+CjwvZz4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzNBM0EzODsiIHBvaW50cz0iMjA2LjcsMTMwLjIgMTc4LjgsMTMzLjUgMjEyLjksMTY4LjYgMjQwLjgsMTY1LjIgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjIzNC41LDEyNi44IDIwNi43LDEzMC4yIDI0MC44LDE2NS4yIDI2OC43LDE2MS45ICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojM0EzQTM4OyIgcG9pbnRzPSIyNjIsMTIzLjUgMjM0LjEsMTI2LjggMjY4LjMsMTYxLjkgMjk2LjEsMTU4LjUgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjI4OS4xLDEyMC4yIDI2MS4yLDEyMy42IDI5NS4zLDE1OC42IDMyMy4yLDE1NS4zICIvPgo8cG9seWdvbiBzdHlsZT0iZmlsbDojM0EzQTM4OyIgcG9pbnRzPSIzMTYuNSwxMTYuOSAyODguNywxMjAuMyAzMjIuOCwxNTUuMyAzNTAuNywxNTIgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBwb2ludHM9IjM0NCwxMTMuNiAzMTYuMSwxMTcgMzUwLjMsMTUyIDM3OC4yLDE0OC43ICIvPgo8Zz4KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiMzQTNBMzg7IiBwb2ludHM9IjM4NC4xLDEwOC43IDM0NC40LDExMy42IDM3OC42LDE0OC42IDM4OC43LDE0Ny40ICAiLz4KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiMzQTNBMzg7IiBwb2ludHM9IjE5OC42LDIyOC41IDEwMS40LDIyOC41IDEwMS40LDE0Mi44IDExNS41LDE0MS4xICAiLz4KPC9nPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0I1QjRBMDsiIGN4PSIxMTUiIGN5PSIxNjMuNCIgcj0iNS43Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNCNUI0QTA7IiBjeD0iMTE1IiBjeT0iMjA4LjEiIHI9IjUuNyIvPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojQjVCNEEwOyIgY3g9IjE1OS44IiBjeT0iMjA4LjEiIHI9IjUuNyIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="
+            />
+            <span class="button-text">Show Local
+                <br>Theaters</span>
+        </button>
+    </div>
+
+    <a href="#openModal">Open Modal</a>
+
+    <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <br>
+            <p>This is where theater and dinner locations will show up.</p>
+            <br>
+            <p>OR it is where the user's zipcode/current location will be stored, and then another div appears below the buttons
+                to show maps.</p>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../javascript/annieTMBD.js"></script>
+</body>
+
+</html>
