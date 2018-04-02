@@ -1,69 +1,77 @@
+/* styles entire body */
 body {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
 }
 
-/* hr {
-    margin-bottom: 100px;
-} */
-
+/* styles entire table */
 table {
     width: 100%;
     margin-bottom: 40px;
 }
 
+/* sticks column content to the very top */
 td {
     vertical-align: top;
 }
 
-td.rating {
+/* sticks column content in the center */
+td#rating-slot {
     vertical-align: middle;
-}
-
-td.release-year {
-    vertical-align: middle;
-}
-
-tbody {
-    height: 300px;
-}
-
-th,
-td {
     text-align: center;
+    border-right-style: solid;
+    border-right-color: rgb(170, 170, 170);
+    border-right-width: 0.5px;
 }
 
-.pure-u-1-5 {
-    float: right;
+/* styles the year content */
+#year-slot {
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 6px;
+    text-align: left;
 }
 
+/* keeps the height of each row the same */
+tbody {
+    height: 210px;
+}
+
+/* styles the buttons and keeps it on the edge of the body */
 .pure-button {
     margin-bottom: 8px;
     width: 155px;
     display: flex;
     align-items: center;
     text-align: left;
-    border-style: solid;
-    border-width: 0.2px;
-    border-color: rgb(17, 0, 112);
     float: right;
+    margin-left: 8px;
 }
 
+hr {
+    clear: both;
+}
+
+/* button changes color when user hovers over */
 button:hover {
     background: rgb(18, 83, 223);
 }
 
+/* button changes color when user clicks button */
 button:active {
     background: rgb(14, 64, 170);
 }
 
-span {
+/* styles the text within the buttons */
+span.button-text {
     font-size: 12.5px;
     margin-top: 2px;
 }
 
+/* styles the icons within the buttons */
+#movie-logo,
 #food-logo {
     max-height: 40px;
     max-width: 40px;
@@ -73,23 +81,16 @@ span {
     margin-top: 1px;
     margin-left: -2px;
     margin-right: 4px;
+    border: none;
 }
 
-#movie-logo {
-    max-height: 40px;
-    max-width: 40px;
-    width: 100%;
-    height: 100%;
-    padding-right: 10px;
-    margin-top: 1px;
-    margin-left: -2px;
-    margin-right: 4px;
-}
-
-#moviePoster {
-    max-height: 380px;
-    max-width: 140px;
-    margin-bottom: -4px;
+/* formats the size of the incoming posters, sets animation speed to 1 second, and assigns a border */
+img {
+    height: 210px;
+    width: 140px;
+    margin: auto 0;
+    margin-right: -65px;
+    margin-top: 3px;
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
     -o-transition: all 1s ease; /* IE 9 */
@@ -100,47 +101,134 @@ span {
     border-color: black;
 }
 
-
-#moviePoster:hover {
-    -webkit-transform:scale(2); /* Safari and Chrome */
-    -moz-transform:scale(2); /* Firefox */
-    -ms-transform:scale(2); /* IE 9 */
-    -o-transform:scale(2); /* Opera */
-     transform:scale(2);
+/* gives the poster a size growth animation */
+img:hover {
+    -webkit-transform:scale(1.5); /* Safari and Chrome */
+    -moz-transform:scale(1.5); /* Firefox */
+    -ms-transform:scale(1.5); /* IE 9 */
+    -o-transform:scale(1.5); /* Opera */
+     transform:scale(1.5);
 }
 
-#poster-head,
-#trailer-head,
-#synopsis-head {
-    text-align: left;
-}
-
+/* styles the movie trailer */
 iframe {
+    margin-top: 3px;
     height: 210px;
     width: 400px;
     border-style: solid;
     border-width: 0.5px;
     border-color: black;
+    margin-right: -160px;
 }
 
-td.synopsis {
-    display: block;
-    background: rgb(189, 189, 189);
+/* styles the plot */
+td#synopsis-slot {
+    background: rgb(209, 209, 209);
     margin-top: 8px;
-    width: 125px;
-    height: 210px;
-    overflow: auto;
-    padding: 0;
-    margin-left: 16px;
-    margin-right: 16px;
+    width: 50px;
+    height: 205px;
+    overflow: scroll;
+    padding: 4px, 4px, 4px, 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(133, 133, 133);
 }
 
+/* styles the content within the synopsis */
+p {
+    overflow: scroll;
+    max-height: 210px;
+    margin-top: 4px;
+}
+
+/* styles the table header */
 th {
     background: rgb(10, 0, 70);
     color: white;
 }
 
+/* styles the table row */
 tr {
     font-size: 14px;
     background: rgb(231, 231, 231);
+}
+
+.thin-column {
+    text-align: center;
+}
+
+td#radio-slot {
+   vertical-align: middle;
+   text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+/* larger or equal to 1280px */
+@media screen and (min-width: 80em) {
+    td#rating-slot,
+    td#year-slot {
+        width: 50px;
+    }
+
+    td#poster-slot {
+        width: 141px;
+    }
+
+    td#synopsis-slot {
+        width: 200px;
+    }
+}
+
+/* larger or equal to 1024px */
+@media screen and (min-width: 64em) {
+    
+    td#poster-slot {
+        width: 120px;
+    }
+
+    iframe {
+        height: 210px;
+        width: 96%;
+    }
+
+    td#trailer-slot {
+        width: 380px;
+    }
+
+    td#radio-slot {
+        width: 10px;
+    }
+
+    td#rating-slot {
+        width: 10px;
+    }
+
+    img:hover {
+        -webkit-transform:scale(1.2); /* Safari and Chrome */
+        -moz-transform:scale(1.2); /* Firefox */
+        -ms-transform:scale(1.2); /* IE 9 */
+        -o-transform:scale(1.2); /* Opera */
+         transform:scale(1.2);
+    }
+}
+
+/* larger or equal to 768px */
+@media screen and (min-width: 48em) {
+
+    td#radio-slot {
+        width: 10px;
+    }
+
+    td#rating-slot {
+        width: 10px;
+    }
+
+    iframe {
+        width: 375px;
+    }
+
+    td#synopsis-slot {
+        width: 120px;
+    }
 }
