@@ -4,25 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project 1</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 
 
 </head>
 <body>
-        <div class="jumbotron">
-            <div id="apptitle">
-                <h1 class="display-4">Dinner and a Movie!</h1>
-                <p class="lead">The app that lets you know what movie to take your date to and where to take them afterwards!</p>
-            </div>
-        </div>
+        <main class="wrapper">
+            <section class="section parallax bg1">
+                <h1>The Dinner and a Movie App!</h1>
+            </section>
     
-        <div class="containder">
+        <section class="section static">
             <div class="row">
                 <div class="col">
+                    <h2>Enter Your Movie!</h2>
                     <form class="pure-form pure-form-aligned">
                     <fieldset>
                     <div class="pure-control-group">
@@ -34,13 +32,13 @@
                         <label for="actor">Actor</label>
                         <input id="actor" type="text" placeholder="Actor">
                     </div>
-            
+
                     <div class="pure-control-group">
-                        <label for="genre">Genre</label>
-                        <input id="genre" type="text" placeholder="Genre">
+                            <label for="genre">Genre</label>
+                            <input id="genre" type="text" placeholder="Genre">
                     </div>
-            
-                    <div class="pure-control-group">
+                    
+                     <div class="pure-control-group">
                         <label for="year">Year</label>
                         <input id="year" type="text" placeholder="Year">
                     </div>
@@ -58,9 +56,15 @@
                     <div id="trailers-view"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <section class="section parallax bg2">
+                <h1>Have Fun!</h1>
+            </section>
+
+        
+    </main>
+
 
 
     
