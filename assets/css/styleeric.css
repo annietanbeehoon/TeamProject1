@@ -1,0 +1,72 @@
+
+body,html{margin:0;padding:0; font-family:"Luna";}
+
+.wrapper {
+
+  height: 100vh;
+ 
+  overflow-x: hidden;
+ 
+  overflow-y: auto;
+
+  perspective: 2px;
+
+
+}
+
+.section {
+  
+  position: relative;
+  
+  height: 100vh;
+  
+  
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  
+  
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.parallax::after {
+  
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+
+  transform: translateZ(-1px) scale(2);
+  
+  background-size: 100%;
+  
+  z-index: -1;
+}
+
+
+.static {
+  background-image: url('../image/stars.jpg')
+}
+
+
+.bg1::after {
+  background-image: url('../image/avengers1.jpg');
+}
+
+.bg2::after {
+  background-image: url('../image/avengers2.jpg');
+}
+
+
+h1{
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+}
