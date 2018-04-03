@@ -148,14 +148,15 @@ async function get_cinemas(cinema_id) {
 
 }
 
-
 function writeShowtimes(element) {
     console.log("WriteShowTime", element);
     //grab all arr cinema information
     const result = arrCinema.find(arCin => arCin.CinemaId === element.cinema_id);
 
     var p = $("<p>");
-    var xx = 'Start_at: ' + element.start_at + ' , booking_link: ' + element.booking_link + '<br>';
+    var dateFormt = moment(element.start_at).format("dddd, MMMM Do YYYY, h:mm:ss a");
+
+    var xx = 'Start_at: ' + dateFormt + ' , booking_link: ' + element.booking_link + '<br>';
     xx += ' Cinema Id: ' + element.cinema_id + ' , cinema_movie_title: ' + element.cinema_movie_title;
     //add cinema info to showtimes
     // xx += JSON.stringify(result.CinemaAll) + '<br><br>';
