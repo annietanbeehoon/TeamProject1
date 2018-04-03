@@ -3,12 +3,10 @@ $(document).ready(function () {
     $('.restsrch').on("click", function (event) {
         event.preventDefault();
         // Zomato API documentation : https://developers.zomato.com/documentation#/
-        //https://developers.zomato.com/api/v2.1/geocode?lat=40.5953&lon=-74.6173
-
+        
         // test longitude and lat -- using John's house
         var latitude = 40.5953;
         var longitude = -74.6173;
-        // var url = "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/"
         var queryURL = "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/geocode";
         var zomatoApiKey = "7e961b35d77eea45b512e4de6cc50dc3";
 

@@ -65,7 +65,7 @@ $(document).ready(function () {
     main_GetPosition();  //gets geo location and create map2
     geoFindMe();
 
-    var movieID = $("#movieList").change(function () {
+    var movieID = $("#show-theaters").click(function () {
         console.log($(this).val());
         Ajax_withMovieID($(this).val());
     });
