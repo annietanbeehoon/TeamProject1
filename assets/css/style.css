@@ -1,0 +1,358 @@
+hr {
+    /* styles line break */
+    border-width: 1px;
+}
+
+.rating-score {
+    /* styles rating to a different color, NEEDS MODIFYING */
+    color: rgb(65, 230, 65);
+}
+
+#main-view { 
+    /* sets max width */
+    width: 75%;
+    /* sets background color */
+    background: rgb(182, 182, 182);
+    /* centers div */
+    margin: 0 auto;
+    /* create block */
+    display: block;
+    /* rounds edges */
+    border-radius: 4px;
+    /* removes rounding from top */
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    /* styles the border */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#info-view {
+    /* creates a block */
+    display: block;
+    /* aligns text to the center */
+    text-align: center;
+}
+
+.title-format {
+    /* adds space beneath title */
+    margin-bottom: 2px;
+    /* sets font size */
+    font-size: 25px;
+    /* sets font boldness */
+    font-weight: lighter;
+    /* spaces each letter by 1 pixel */
+    letter-spacing: 1px;
+    /* sets background color */
+    background: rgb(0, 5, 57);
+    /* sets font color */
+    color: white;
+    /* adds padding to add headspace */
+    padding-top: 8px;
+    padding-bottom: 6px;
+    /* centers title */
+    margin: 0 auto;
+}
+
+.year-format {
+    /* sets font color */
+    color: black;
+    /* sets font size */
+    font-size: 16px;
+    /* adds padding to add headpace */
+    padding-top: 12px;
+    padding-bottom: 8px;
+    /* sets font boldness */
+    font-weight: lighter;
+    /* spaces each letter by 1 pixel */
+    letter-spacing: 2px;
+}
+
+form {
+    /* adds space above */
+    margin-top: 2px;
+    /* centers text */
+    text-align: center;
+}
+
+input {
+    /* sets checkbox size */
+    height: 70px;
+    width: 70px;
+}
+
+.poster-format {
+    /* sets image proportion */
+    max-width: 95%;
+    height: auto;
+    /* creates block */
+    display: block;
+    /* centers image */
+    margin: 0 auto;
+    /* adds space above and below */
+    margin-top: 2px;
+    margin-bottom: 10px;
+    /* styles border */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+.trailer-format {
+    /* sets trailer proportion */
+    width: 95%;
+    /* creates block */
+    display: block;
+    /* centers trailer */
+    margin: 0 auto;
+    /* adds space above and below */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* styles border */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+#side-view {
+    /* sets max width */
+    width: 75%;
+    /* sets background color */
+    background: rgb(182, 182, 182);
+    /* centers div */
+    margin: 0 auto;
+    /* creates block */
+    display: block;
+    /* adds space overhead */
+    margin-top: 10px;
+    /* styles border */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#rating-view {
+    /* aligns text to center */
+    text-align: center;
+    /* sets background color */
+    background: rgb(0, 5, 57);
+    /* sets font color */
+    color: rgb(248, 248, 248);
+    /* sets fixed height */
+    height: 30px;
+}
+
+.rating-format {
+    /* sets line-height */
+    line-height: 32px;
+    /* spaces each letter by 1.5 pixels */
+    letter-spacing: 1.5px;
+}
+
+#plot-view {
+    /* centers plot */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plot-format {
+    /* adds space overhead */
+    margin: 15px;
+    /* sets max-width */
+    max-width: 95%;
+    /* brings checkbox closer */
+    margin-bottom: 0;
+    /* sets background color */
+    background: rgb(255, 255, 255);
+    /* adds space around text */
+    padding: 10px;
+    /* styles border */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    /* sets a max-height */
+    max-height: 250px;
+    /* allows users to scroll within the plot */
+    overflow: scroll;
+}
+
+/* resizing the trailer for different browser sizes*/
+
+/* small */
+@media screen and (min-width: 35.5em) {
+    .trailer-format {
+        height: 200px;
+    }
+}
+
+/* medium */
+@media screen and (min-width: 48em) {
+    .trailer-format {
+        height: 250px;
+    }
+}
+
+/* large */
+@media screen and (min-width: 64em) {
+    .trailer-format {
+        height: 350px;
+    }
+}
+
+/* x-large */
+@media screen and (min-width: 80em) {
+    .trailer-format {
+        height: 450px;
+    }
+}
+
+
+#buttons-view {
+    /* sets width */
+    width: 75%;
+    /* centers div */
+    margin: 0 auto;
+}
+
+.pure-button {
+    /* adds space below */
+    margin-bottom: 8px;
+    /* flex div across */
+    display: flex;
+    /* centers button content */
+    align-items: center;
+    /* aligns inner text left */
+    text-align: left;
+    /* sets width */
+    width: 100%;
+    /* sets a max-wifth */
+    max-width: 210px;
+    /* sets border styling */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.button-text {
+    /* sets font size */
+    font-size: 18px;
+    /* adds space overhead */
+    margin-top: 2px;
+    /* sets font boldness */
+    font-weight: lighter;
+}
+
+button:hover {
+    /* sets background color when mouse is hovering over */
+    background: rgb(18, 83, 223);
+}
+
+button:active {
+    /* sets background color when mouse is pressing down */
+    background: rgb(14, 64, 170);
+}
+
+#movie-logo,
+#food-logo {
+    /* sets size */
+    max-height: 72px;
+    max-width: 72px;
+    width: 100%;
+    height: 100%;
+    /* adds space to the right */
+    padding-right: 10px;
+    /* adds space to the top */
+    margin-top: 1px;
+}
+
+.modalDialog {
+    /* keeps position fixed */
+    position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+    left: 0;
+    /* sets background color of entire html document */
+    background: rgba(0,0,0,0.8);
+    /* brings the modal box up */
+    z-index: 99999;
+    /* sets opacity to none */
+    opacity:0;
+    /* eases animation in */
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    /* mouse click does nothing */
+	pointer-events: none;
+}
+
+.modalDialog:target {
+    /* shows modal */
+    opacity: 1;
+    /* allows click action */
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+    /* sets width */
+    width: 400px;
+    /* sets position */
+    position: relative;
+    /* centers div */
+    margin: 10% auto;
+    /* adds space around */
+    padding: 5px 20px 13px 20px;
+    /* sets background color and gradient pattern */
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    /* sets background color */
+    background: #606061;
+    /* sets text color */
+    color: #FFFFFF;
+    /* sets line height */
+    line-height: 25px;
+    /* sets position */
+	position: absolute;
+	right: -12px;
+    top: -10px;
+    /* aligns text to the center */
+    text-align: center;
+    /* sets width */
+    width: 24px;
+    /* removes any text decoration */
+    text-decoration: none;
+    /* set font boldness */
+    font-weight: bold;
+    /* rounds edges */
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { 
+    /* sets background color when mouse hovers over */
+    background: #00d9ff; 
+}
+
+a {
+    /* removes a-link underline */
+    text-decoration-line: none;
+}
