@@ -52,6 +52,8 @@ A button will allow user to call up restuarants near him/her. THhs brings a nice
 
 - [x] Annie & John to do Zomato for restaurants by geolocation after user select theatre
 
+- [x] As a team, we will add the pieces together to create a single app.
+
 
 
 
