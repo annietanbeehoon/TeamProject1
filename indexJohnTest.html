@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Project html to test ishowtimes ajax</title>
+
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!--moment js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            border: 2 px black;
+            background: rgb(47, 0, 255);
+        }
+
+        #movieList {
+            margin: 40px 400px;
+        }
+
+        img {
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <select class="form-control" name="movieList" id='movieList'>
+        <option value='578'>Jaws</option>
+        <option value='353486'>New Jumanji</option>
+        <option value='338970'>New Tombraider</option>
+        <option value='268896'>Pacific rim uprising</option>
+        <option value='407451'>Wrinkle in time</option>
+        <option value='333339'>Ready Player One</option>
+        <option value='370567'>Sherlock Gnomes</option>
+        <option value='284054'>BlankPanther</option>
+    </select>
+
+    <h1>This is to test the iShowtimes Ajax calls </h1>
+    <p>this is from john branch</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 panel panel-default">
+                <div class="panel-body" id='movies'>
+                </div>
+            </div>
+            <div class="col-sm-4 panel panel-default">
+                <div class="panel-body" id='showtime'>
+                    showtime
+                </div>
+            </div>
+
+            <div class="col-sm-4 panel panel-default">
+                <div class="panel-body" id='cinemas'>
+                    cinemas
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/googlemapapi.js"></script>
+    <script src="assets/javascript/ishowmovietocinema.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSMDeXXQxaeLJ4ZGXuwSKAM3NHBP4ckTc"> </script>
+  
+</body>
+
+</html>
