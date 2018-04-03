@@ -148,7 +148,6 @@ async function get_cinemas(cinema_id) {
 
 }
 
-//moment(arr[0]).format("dddd, MMMM Do YYYY, h:mm:ss a")
 function writeShowtimes(element) {
     console.log("WriteShowTime", element);
     //grab all arr cinema information
