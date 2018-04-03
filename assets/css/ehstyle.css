@@ -14,12 +14,7 @@ body,html{margin:0;padding:0; font-family:"Luna";}
 
 }
 
-#movie-input {
 
-  width: 100px;
-  margin: 0px;
-
-}
 
 .section {
   
@@ -69,10 +64,7 @@ body,html{margin:0;padding:0; font-family:"Luna";}
   background-image: url('../image/avengers2.jpg');
 }
 
-.footer{
-    background: #fff;
-    color: blue;
-}
+
 
 h1{
     font-weight: normal;
