@@ -70,7 +70,7 @@ function get_Showtimes(iShowtimes_id) {
             "countries": "US",
             "movie_id": iShowtimes_id,
             "time_to": myTomorrow,
-            "limit": 20,
+            "limit": 40,
             "append": "cinema",
             //"movie_fields:":"scene_images.flat",
             "fields": "cinema_id,start_at,cinema_movie_title,booking_link,title,slug,poster_image_thumbnail",
@@ -90,7 +90,7 @@ function get_Showtimes(iShowtimes_id) {
                 writeShowtimes(element);
 
                 if (haveCinemaInfo(element.cinema_id) < 0) {
-                    get_cinemas(element.cinema_id);
+                    //get_cinemas(element.cinema_id);
                 }
 
             }
@@ -110,7 +110,7 @@ function get_Showtimes(iShowtimes_id) {
 
 function haveCinemaInfo(cinemaId) {
     var index;
-    index = arrCinema.findIndex( el => el[0] == cinemaId);
+    index = arrCinema.findIndex(el => el[0] == cinemaId);
     console.log(' haveCinemaInfo(cinemaId)', index);
     return index;
 
@@ -151,9 +151,20 @@ async function get_cinemas(cinema_id) {
 
 function writeShowtimes(element) {
     console.log("WriteShowTime", element);
+    //grab all arr cinema information
+    const result = arrCinema.find(arCin => arCin.CinemaId === element.cinema_id);
+
     var p = $("<p>");
     var xx = 'Start_at: ' + element.start_at + ' , booking_link: ' + element.booking_link + '<br>';
-    xx += ' Cinema Id: ' + element.cinema_id + ' , cinema_movie_title: ' + element.cinema_movie_title + '<br><br>';
+    xx += ' Cinema Id: ' + element.cinema_id + ' , cinema_movie_title: ' + element.cinema_movie_title;
+    //add cinema info to showtimes
+    // xx += JSON.stringify(result.CinemaAll) + '<br><br>';
+    var rCa = result.CinemaAll;
+    xx += "from Cinema database: " + rCa.id + ' , Theater name:' + rCa.name;
+    xx += ', location lat and lon: ' + rCa.location.lat + "," + rCa.location.lon;
+    xx += " , address: " + rCa.location.address.display_text + ',' + rCa.location.address.city;
+    xx += " website: " + rCa.website + '<br><br>';
+
     p.html(xx);
     $('#showtime').append(p);
 
