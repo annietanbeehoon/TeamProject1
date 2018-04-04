@@ -76,12 +76,12 @@ async function map4() {
     console.log(map);
 
     // add marker --parkingn lot marker
-    //var iconBase = 'https://maps.google.com/mapfiles/kml/pal4/';
-    // var marker = new google.maps.Marker({
-    //     position: { lat: Latitude, lng: Longitude },
-    //     map: map,
-    //     icon: iconBase + 'icon28.png'
-    // });
+    var iconBase = 'https://maps.google.com/mapfiles/kml/pal4/';
+    var marker = new google.maps.Marker({
+        position: { lat: Latitude, lng: Longitude },
+        map: map,
+        icon: iconBase + 'icon28.png'
+    });
 
     var marker2 = new google.maps.Marker({
         position: { lat: Latitude, lng: Longitude },

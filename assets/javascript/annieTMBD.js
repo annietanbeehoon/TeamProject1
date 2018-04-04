@@ -1,9 +1,8 @@
-$(document).ready(function () {
-  // CLICK HANDLERS
-  // ==========================================================
-  $("#movies-input").empty();
+
+  // ====== $("#movies-input").empty();====================================================
+ 
   // .on("click") function associated with the Search Button
-  $(".pure-controls").on("click", function (event) {
+  $("#submit").on("click", function (event) {
     // This line allows us to take advantage of the HTML "submit" property
     // This way we can hit enter on the keyboard and it registers the search
     // (in addition to clicks). Prevents the page from reloading on form submit.
@@ -49,7 +48,7 @@ $(document).ready(function () {
       //============================results[0] - failed to make a function so
       //============================replicated codes for each result index 0 to 4
       //get movieID for Showtime
-      var movieId = JSON.parse(response.results[0].id);
+      movieId = JSON.parse(response.results[0].id);
       console.log(movieId);
 
       // Creating a div to hold the movie title and release year
@@ -137,219 +136,9 @@ $(document).ready(function () {
       $("#myear-input").val("");
 
 
-      // //=====================================results[1]
-      // //get movieID for Showtime
-      // var movieId = JSON.parse(response.results[1].id);
-      // console.log(movieId);
-
-      // // Creating a div to hold the movie
-      // var movieDiv = $("#main-view");
-
-      // console.log('Title:', response.results[1].title);
-      // var title = response.results[1].title;
-      // var pMovieTitle = $(".title-format").text("Movie Title: " + title);
-      // movieDiv.append(pMovieTitle);
-
-      // console.log('Vote Average:', response.results[1].vote_average);
-      // var vote = response.results[1].vote_average;
-      // var pVote = $(".rating-format").text("Vote Average: " + vote);
-      // movieDiv.append(pVote);
-
-      // // Storing the release date data
-      // var releaseDate = response.results[1].release_date;
-      // // Creating an element to have the release date displayed
-      // var pOne = $(".year-format").text("Release date: " + releaseDate);
-      // // Displaying the releaseDate
-      // movieDiv.append(pOne);
-
-      // // Storing the overview
-      // var overview = response.results[1].overview;
-      // // Creating an element to hold the overview
-      // var pTwo = $(".plot-format").text("Overview: " + overview);
-      // // Appending the plot
-      // movieDiv.append(pTwo);
-
-      // // Retrieving the URL for the image
-      // // var imgURL = response.results[0].poster_path;
-      // console.log('poster path: ', response.results[1].poster_path);
-      // var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[1].poster_path;
-      // console.log(imgURL);
-      // // Creating an element to hold the image
-      // var image = $(".oster-format").attr("src", imgURL);
-      // // Appending the image
-      // movieDiv.append(image);
-
-      // //====================================results[2]
-      // //get movieID for Showtime
-      // var movieId = JSON.parse(response.results[2].id);
-      // console.log(movieId);
-
-      // // Creating a div to hold the movie
-      // var movieDiv = $("#main-view");
-
-      // console.log('Title:', response.results[2].title);
-      // var title = response.results[2].title;
-      // var pMovieTitle = $("title-format").text("Movie Title: " + title);
-      // movieDiv.append(pMovieTitle);
-
-      // console.log('Vote Average:', response.results[2].vote_average);
-      // var vote = response.results[2].vote_average;
-      // var pVote = $(".rating-format").text("Vote Average: " + vote);
-      // movieDiv.append(pVote);
-
-      // // Storing the release date data
-      // var releaseDate = response.results[2].release_date;
-      // // Creating an element to have the release date displayed
-      // var pOne = $("year-format").text("Release date: " + releaseDate);
-      // // Displaying the releaseDate
-      // movieDiv.append(pOne);
-
-      // // Storing the overview
-      // var overview = response.results[2].overview;
-      // // Creating an element to hold the overview
-      // var pTwo = $("plot-format").text("Overview: " + overview);
-      // // Appending the plot
-      // movieDiv.append(pTwo);
-
-      // // Retrieving the URL for the image
-      // // var imgURL = response.results[0].poster_path;
-      // console.log('poster path: ', response.results[2].poster_path);
-      // var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[2].poster_path;
-      // console.log(imgURL);
-      // // Creating an element to hold the image
-      // var image = $("poster-format").attr("src", imgURL);
-
-      // // Appending the image
-      // movieDiv.append(image);
-
-      // $("#movie-input").val("");
-      // $("#actor-input").val("");
-      // $("#genre-input").val("");
-      // $("#myear-input").val("");
-
-
-      // //==============================results[3]
-
-      // //get movieID for Showtime
-      // var movieId = JSON.parse(response.results[3].id);
-      // console.log(movieId);
-
-      // // Creating a div to hold the movie
-      // var movieDiv = $("#main-view");
-
-      // console.log('Title:', response.results[3].title);
-      // var title = response.results[3].title;
-      // var pMovieTitle = $(".title-format").text("Movie Title: " + title);
-      // movieDiv.append(pMovieTitle);
-
-      // console.log('Vote Average:', response.results[3].vote_average);
-      // var vote = response.results[3].vote_average;
-      // var pVote = $(".rating-format").text("Vote Average: " + vote);
-      // movieDiv.append(pVote);
-
-      // // Storing the release date data
-      // var releaseDate = response.results[3].release_date;
-      // // Creating an element to have the release date displayed
-      // var pOne = $(".year-format").text("Release date: " + releaseDate);
-      // // Displaying the releaseDate
-      // movieDiv.append(pOne);
-
-      // // Storing the overview
-      // var overview = response.results[3].overview;
-      // // Creating an element to hold the overview
-      // var pTwo = $(".plot-format").text("Overview: " + overview);
-      // // Appending the plot
-      // movieDiv.append(pTwo);
-
-      // // Retrieving the URL for the image
-      // // var imgURL = response.results[0].poster_path;
-      // console.log('poster path: ', response.results[3].poster_path);
-      // var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[3].poster_path;
-      // console.log(imgURL);
-      // // Creating an element to hold the image
-      // var image = $(".poster-format").attr("src", imgURL);
-
-      // // Appending the image
-      // movieDiv.append(image);
-      // //===============================results[4]
-      // //get movieID for Showtime
-      // var movieId = JSON.parse(response.results[4].id);
-      // console.log(movieId);
-
-      // // Creating a div to hold the movie
-      // var movieDiv = $("#main-view");
-
-      // console.log('Title:', response.results[4].title);
-      // var title = response.results[4].title;
-      // var pMovieTitle = $(".title-format").text("Movie Title: " + title);
-      // movieDiv.append(pMovieTitle);
-
-      // console.log('Vote Average:', response.results[4].vote_average);
-      // var vote = response.results[0].vote_average;
-      // var pVote = $(".rating-format").text("Vote Average: " + vote);
-      // movieDiv.append(pVote);
-
-      // // Storing the release date data
-      // var releaseDate = response.results[4].release_date;
-      // // Creating an element to have the release date displayed
-      // var pOne = $(".year-format").text("Release date: " + releaseDate);
-      // // Displaying the releaseDate
-      // movieDiv.append(pOne);
-
-      // // Storing the overview
-      // var overview = response.results[4].overview;
-      // // Creating an element to hold the overview
-      // var pTwo = $(".plot-format").text("Overview: " + overview);
-      // // Appending the plot
-      // movieDiv.append(pTwo);
-
-      // // Retrieving the URL for the image
-      // // var imgURL = response.results[0].poster_path;
-      // console.log('poster path: ', response.results[4].poster_path);
-      // var imgURL = "https://image.tmdb.org/t/p/w500" + response.results[4].poster_path;
-      // console.log(imgURL);
-      // // Creating an element to hold the image
-      // var image = $("poster-format").attr("src", imgURL);
-
-      // // Appending the image
-      // movieDiv.append(image);
-
-      // $("#movie-input").val("");
-      // $("#actor-input").val("");
-      // $("#genre-input").val("");
-      // $("#myear-input").val("");
-
-      // //====================================End of results==================
-
-
-
-
-
-
-      // // console.log(response.id);
-      // // console.log('youtube: ' , response.results[1].key);
-
-      // // var trailersDiv = $("#trailers-view");
-      // // // Retrieving the trailer videos
-
-      // // http://api.themoviedb.org/3/movie/157336?api_key=###&append_to_response=videos
-      // // var trailerInfo = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=88887032dc1d0d80dd7ccbd783133865";
-      // // console.log(trailerInfo);
-
-      // // console.log(results[0].key);
-
-      // // console.log("Youtube Key: ", results[0].key);
-
-      // // var video = $("<vid>").attr("src", trailer);
-      // // trailersDiv.append(video);
-
-
-
-
-
     });
 
   })
 
-});
+
 
