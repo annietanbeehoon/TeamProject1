@@ -8,7 +8,8 @@
 function Ajax_withMovieID(movieId) {
     //need to make call from annie tmdb to get ishowtime movieid
     jQuery.ajax({
-        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
+        //url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
+        url: "https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
         type: "GET",
         data: {
             "countries": "US",
