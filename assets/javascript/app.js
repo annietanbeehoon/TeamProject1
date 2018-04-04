@@ -13,7 +13,7 @@ var myTomorrow;
 var movieId;
 
 var corsHead;
-var runFromGithub = true; //false;
+var runFromGithub = true; //false ; 
 
 if (runFromGithub) {
     corsHead="";
