@@ -10,11 +10,7 @@ function showFoodMap(alat, alon) {
     // Zomato API documentation : https://developers.zomato.com/documentation#/        
 
     //var queryURL = "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/geocode";
-<<<<<<< HEAD
     var queryURL = corsHead + "https://developers.zomato.com/api/v2.1/geocode";
-=======
-    var queryURL = "https://developers.zomato.com/api/v2.1/geocode";
->>>>>>> master
     var zomatoApiKey = "7e961b35d77eea45b512e4de6cc50dc3";
 
     $.ajax({
