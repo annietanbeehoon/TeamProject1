@@ -63,7 +63,8 @@ function get_Showtimes(iShowtimes_id) {
     // console.log('get_Showtimes(id)', iShowtimes_id);
 
     jQuery.ajax({
-        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
+        //url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
+        url: "https://api.internationalshowtimes.com/v4/showtimes/",
         type: "GET",
         data: {
             "countries": "US",
