@@ -14,11 +14,6 @@ function geoFindMe() {
     function success(position) {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        // output.html('<h3>Google Map2 from function geoFindMe</h3> <p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>');
-        // var img = new Image();
-        // img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon
-        //     + "&zoom=13&size=300x300&sensor=false";
-        // output.append(img);        
     }
 
     function error() {
@@ -79,6 +74,29 @@ async function map4() {
 //}
 
 
+function isLocalStorage() {
+    if (typeof (Storage) !== undefined) {
+        console.log('local storage:', localStorage.Latitude);
+        if (localStorage.Latitude === undefined || localStorage.Longitude === undefined) {
+            return false;
+        } else {
+            Latitude = localStorage.Latitude;
+            Longitude = localStorage.Longitude;
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
+
+function checkLocalStorCoor() {
+    if (typeof (Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+
+    } else {
+        // Sorry! No Web Storage support..
+    }
+}
 
 async function getPosition() {
     return new Promise((res, rej) => {
@@ -87,10 +105,17 @@ async function getPosition() {
 }
 
 async function main_GetPosition() {
+    if (isLocalStorage()) {
+        return;
+    }
+
     var position = await getPosition();
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
     hasPromiseReturned = true;
     position = position;
+
+    localStorage.Latitude = Latitude;
+    localStorage.Longitude = Longitude;
 
 }

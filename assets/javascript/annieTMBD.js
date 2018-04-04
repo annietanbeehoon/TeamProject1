@@ -119,7 +119,7 @@ $("#submit").on("click", function (event) {
     // storing the vote average
     //console.log('Vote Average:', response.results[0].vote_average);
     var vote = response.results[0].vote_average;
-    var pVote = $(".rating-score").text("Vote Average: " + vote);
+    var pVote = $("#rating-view").text("Vote Average: " + vote);
     sideView.append(pVote);
 
     // Storing the overview

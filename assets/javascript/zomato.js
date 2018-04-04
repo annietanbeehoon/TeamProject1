@@ -9,7 +9,8 @@ function showFoodMap(alat, alon) {
     event.preventDefault();
     // Zomato API documentation : https://developers.zomato.com/documentation#/        
 
-    var queryURL = "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/geocode";
+    //var queryURL = "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/geocode";
+    var queryURL = corsHead + "https://developers.zomato.com/api/v2.1/geocode";
     var zomatoApiKey = "7e961b35d77eea45b512e4de6cc50dc3";
 
     $.ajax({
@@ -78,7 +79,7 @@ function restMaps(arrRestaurants) {
     // var gglemap = $('#googlemap');
     // console.log( gglemap);
     //var map = new google.maps.Map(document.getElementById('googlemap'), options);
-    var map = new google.maps.Map(document.getElementById('john'), options);
+    var map = new google.maps.Map(document.getElementById('gmapsjohn'), options);
 
     console.log(map);
 
