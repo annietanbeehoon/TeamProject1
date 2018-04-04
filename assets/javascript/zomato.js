@@ -47,7 +47,7 @@ function showFoodMap(alat, alon) {
                 name: element.restaurant.name,
                 address: element.restaurant.location.address,
                 lat: element.restaurant.location.latitude,
-                lng: element.restaurant.location.longitude
+                lon: element.restaurant.location.longitude
                 //lat: element.restaurant.location.latitude,
                 //lon: element.restaurant.location.longitude
             }
@@ -62,7 +62,7 @@ function showFoodMap(alat, alon) {
 
 }
 
-async function restMaps(arrRestaurants) {
+ function restMaps(arrRestaurants) {
 
     console.log(' restaurnat maps', arrRestaurants);
 
@@ -74,12 +74,18 @@ async function restMaps(arrRestaurants) {
 
      console.log(' arrRestaurants[0].oRest.lat', arrRestaurants[0].lat);
 
+     var _lat =  parseFloat(   arrRestaurants[0].lat)  ;
+     var _lon =  parseFloat(  "-74.6440740000" ) ;
+
     src = "https://maps.googleapis.com/maps/api/js?key=" + ApiKey_googleMaps + "&callback=initMap";
     var options = {
         zoom: 14,
-        center: { lat: arrRestaurants[0].lat , lng: arrRestaurants[0].lon }
+        center: { lat: Latitude, lng: Longitude }
     }
-    var map = new google.maps.Map($('#openModal2'), options);
+
+    var openmodal = $('#openModal2');
+    console.log( openmodal);
+    var map = new google.maps.Map( document.getElementById('openModal2') , options);
 
 
     console.log(map);
@@ -92,11 +98,11 @@ async function restMaps(arrRestaurants) {
     //     icon: iconBase + 'icon28.png'
     // });
 
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < arrRestaurants.length; i++) {
         const element = arrRestaurants[i];
         var markers = new google.maps.Marker({
-            position: { lat: element.oRest.lat, lng: element.oRest.lon },
-            title: element.oRest.address,
+            position: {lat:_lat , lng: _lon} , //{ lat: element.lat, lng: element.lon },
+            title: element.address,
             map: map
         });
 

@@ -1,17 +1,5 @@
 
-
-// global variables 
-//  will be held in app.js
-
-// for now - using google api key here
-
-//const ApiKey_googleMaps = "AIzaSyDSMDeXXQxaeLJ4ZGXuwSKAM3NHBP4ckTc";
-
-
-// var Latitude;
-// var Longitude;
 var map;
-
 var hasPromiseReturned = false;
 
 
@@ -39,7 +27,7 @@ function geoFindMe() {
 
     output.html("<p>Locating…</p>");
     navigator.geolocation.getCurrentPosition(success, error);
-    console.log(' bottom of geoFindMe');
+    // console.log(' bottom of geoFindMe');
 }
 
 
@@ -63,7 +51,7 @@ async function map4() {
         return;
     }
 
-    console.log('map4 aft promis check', Latitude, Longitude);
+    // console.log('map4 aft promis check', Latitude, Longitude);
      
     src = "https://maps.googleapis.com/maps/api/js?key=" + ApiKey_googleMaps + "&callback=initMap";
     var options = {
@@ -73,7 +61,7 @@ async function map4() {
     var map = new google.maps.Map(document.getElementById('myMap4'), options);
     
     
-    console.log(map);
+    // console.log(map);
 
     // add marker --parkingn lot marker
     var iconBase = 'https://maps.google.com/mapfiles/kml/pal4/';
@@ -100,8 +88,8 @@ async function map4() {
 
 async function main_GetPosition() {
     var position = await getPosition();
-    console.log(' main after promise, coords', position.coords);
-    console.log(position);
+    // console.log(' main after promise, coords', position.coords);
+    // console.log(position);
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
     hasPromiseReturned = true;
