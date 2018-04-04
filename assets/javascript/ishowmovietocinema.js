@@ -8,8 +8,13 @@
 function Ajax_withMovieID(movieId) {
     //need to make call from annie tmdb to get ishowtime movieid
     jQuery.ajax({
+<<<<<<< HEAD
+        //  url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
+        url: corsHead + "https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
+=======
         //url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
         url: "https://api.internationalshowtimes.com/v4/movies/", //+ movieId,
+>>>>>>> master
         type: "GET",
         data: {
             "countries": "US",
@@ -64,8 +69,12 @@ function get_Showtimes(iShowtimes_id) {
     // console.log('get_Showtimes(id)', iShowtimes_id);
 
     jQuery.ajax({
+<<<<<<< HEAD
+        url:  corsHead + "https://api.internationalshowtimes.com/v4/showtimes/",
+=======
         //url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/showtimes/",
         url: "https://api.internationalshowtimes.com/v4/showtimes/",
+>>>>>>> master
         type: "GET",
         data: {
             "countries": "US",
@@ -121,7 +130,7 @@ async function get_cinemas(cinema_id) {
 
     // console.log('get_cinemas(', cinema_id);
     jQuery.ajax({
-        url: "http://cors-anywhere.herokuapp.com/https://api.internationalshowtimes.com/v4/cinemas/" + cinema_id,
+        url:  corsHead + "https://api.internationalshowtimes.com/v4/cinemas/" + cinema_id,
         type: "GET",
         data: {
             "countries": "US",

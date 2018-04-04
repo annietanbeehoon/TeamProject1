@@ -12,6 +12,17 @@ var Longitude; //= -74.6173;
 var myTomorrow;
 var movieId;
 
+var corsHead;
+var runFromGithub = true; //false;
+
+if (runFromGithub) {
+    corsHead="";
+} else {
+     corsHead = "http://cors-anywhere.herokuapp.com/";
+}
+ 
+
+
 //firebase database- holding cinema information
 var config = {
     apiKey: "AIzaSyB2bMy0IMJePW-V4eUguj_a8KHZ8y7Pvdk",
@@ -63,7 +74,7 @@ $(document).ready(function () {
     // console.log(myTomorrow);
      
     main_GetPosition();  //gets geo location 
-    geoFindMe();
+    //geoFindMe();
 
     var movieID = $("#show-theaters").click(function () {
         Ajax_withMovieID(movieId);
