@@ -1,0 +1,15 @@
+Presentation Speech - 2 minutes for each team mate
+
+Hi, I was very unhappy to find out that we have to present in front of the class. For many years, I worked as a Human Resource consultant. I had enough of dealing with people. So I switched - as a programmer, we only need to speak to computer, right?
+
+So you heard of our project idea from Eric. It was a steep learning curve and there were long hours and precious learning experience. I am extremely proud of our hard working team mates. We fought, we argued but we collaborated, listened and pressed on to present you our fina app.
+
+As we were deciding on the tasks, I jumped right into the backend development. I am better at front-end but I reckon I should venture into something I am not good at while I am in school. My aim was to try to improve my coding skills at this project and I did.
+
+Back to our project, we started to research into using a suitable movie database that partners well with a movie theatre search. We decided on The Movie Database that calls our movie details such as the title, movie poster, movie trailer, plot and rating score. (Moreover, I cannot use the omdbapi.)
+
+The Movie Databsae documentation and API support forum are important resources. The tricky part was getting the movie trailer. The GET Video in TMDB only provides data. I use AJAX call to get the data in an object and access the Youtube Key that enable the embedded Youtube video to play by adding the key to the URL.
+
+Upon finishing the TMDB backend, I read up on the restaurants API knowing that we want to offer the user some dining options based on the selected movie theater within a certain geolocation. I selected Zomato over Open Table because Zomato has documentation that is developer friendly. I started coding and provided John a skeleton version that he then transforms the code into fully functional code.
+
+I will let him go into the details himself.
