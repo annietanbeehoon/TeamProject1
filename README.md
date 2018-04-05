@@ -34,7 +34,7 @@ User decides to watch the movie by submitting a button to call for movie theater
 ### View 4
 This page shows the theater currently showing the movie near him/her. It will show a google embed map view.
 
-A button will allow user to call up restuarants near him/her. THhs brings a nice closure to the user. A glass of wine to celebrate for a successful planning.
+A button will allow user to call up restuarants near him/her. This brings a nice closure to the user. A glass of wine to celebrate for a successful planning.
 
 ## Task List
 
